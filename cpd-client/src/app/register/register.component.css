@@ -1,5 +1,8 @@
 body {
-    background-color: rgb(224, 24, 24);
+    background-color: rgb(255, 255, 255);
+    background-image: url("../../assets/images/biscuit (7).jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 *[role="form"] {
@@ -11,7 +14,7 @@ body {
 }
 
 *[role="form"] h2 {
-    margin-left: 5em;
+    margin-left: 1em;
     margin-bottom: 1em;
 }
 

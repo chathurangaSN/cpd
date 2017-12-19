@@ -1,11 +1,16 @@
 body{
     background-color: aqua;
-    height: 1000px;
+    height: 580px;
+    background-image: url("../../assets/images/biscuit (6) .jpg");
+    background-repeat: no-repeat;
+    background-size: 100%
+   
    
 }
 
 .row{
-    margin-left: 20px;
+    margin-left: 324px;
+    width: 100%;
 }
 .form-signin
 {
@@ -58,7 +63,7 @@ body{
 }
 .login-title
 {
-    color: #555;
+    color: rgb(167, 17, 6);
     font-size: 18px;
     font-weight: 400;
     display: block;
