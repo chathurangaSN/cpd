@@ -30,8 +30,7 @@ var productSchema = mongoose.Schema({
         required:true
     },
     commentID:{
-        type:String,
-        required:true
+        type:String
     },
     create_date:{
         type:Date,

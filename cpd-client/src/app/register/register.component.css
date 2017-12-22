@@ -1,5 +1,6 @@
 body {
-    background-color: #eee;
+    background-image: url("/assets/images/back2.jpg");
+    background-repeat: no-repeat, repeat;
 }
 
 *[role="form"] {
@@ -13,5 +14,11 @@ body {
 *[role="form"] h2 {
     margin-left: 5em;
     margin-bottom: 1em;
+}
+.form-horizontal{
+    
+    background-image: url("/assets/images/back2.jpg");
+    background-repeat: no-repeat, repeat;
+   
 }
 
