@@ -1,8 +1,11 @@
-
-.container{
+body{
+    background-color: #64B5F6;
     
-    /* background-image: url("/assets/images/back1.jpg"); */
-    background-repeat: no-repeat;
+}
+.container-fluid{
+    
+
+    background-color: #80CBC4;
 
 }
 .form-signin input[type="text"]
@@ -21,8 +24,10 @@
 {
     
     align-items: center;
-    
-    background-position: center;
+    margin-left: 464px;
+    margin-right: -453px;
+
+    background-color: rgb(136, 192, 238);
  
 }
 .profile-img
