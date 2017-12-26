@@ -1,38 +1,79 @@
-<p>
-  products works!
-</p>
+<p> </p>
 <div class="row">
-  <div class="col-sm-3" style="background-color:#80CBC4">
-    <form class="form-inline my-2 my-lg-0" style="margin-left:27px">
+  <div class="col-sm-3">
+    <form class="form-inline my-2 my-lg-0" style="margin-left:12px">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
     </form>
+    <p> </p>
     <ul class="list-group">
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        Cras justo odio
-        <span class="badge badge-primary badge-pill">14</span>
+       Sweet Range
+        <span class="badge badge-primary badge-pill">3</span>
       </li>
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        Dapibus ac facilisis in
-        <span class="badge badge-primary badge-pill">2</span>
+          Puff Range
+        <span class="badge badge-primary badge-pill">3</span>
       </li>
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        Morbi leo risus
-        <span class="badge badge-primary badge-pill">1</span>
+          Cream Range
+        <span class="badge badge-primary badge-pill">3</span>
       </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+          Cracker Range
+           <span class="badge badge-primary badge-pill">3</span>
+         </li>
+         <li class="list-group-item d-flex justify-content-between align-items-center">
+            Savoury Range
+           <span class="badge badge-primary badge-pill">3</span>
+         </li>
+         <li class="list-group-item d-flex justify-content-between align-items-center">
+             Gift Range
+           <span class="badge badge-primary badge-pill">3</span>
+         </li>
+         <li class="list-group-item d-flex justify-content-between align-items-center">
+            Health & Wellness Range
+          <span class="badge badge-primary badge-pill">3</span>
+        </li>
     </ul>
   </div>
   
   <div class="col-sm-9" style="background-color:#B2DFDB">
-    <div>
-      <ul>
-        <li *ngFor="let product of products">
-          Name:{{product.productName}} ,
-          ID:{{product.productID}}
-        </li>
-      </ul>
-    </div>
+      <p>
+          <a href="#">Add Product</a>
+          
+        </p>
+        <table class="col-sm-12">
+            <thead>
+            <tr>
+              <th class="col-sm-7" data-field="name">Name</th>
+              <th class="col-sm-1" data-field="name">Edit</th>
+              <th class="col-sm-1" data-field="name">Delete</th>
+            </tr>
+            </thead>
+          
+            <tbody>
+              <tr *ngFor="let product of products">
+                  
+                <td class="col-sm-7">{{product.productName}}</td>
+ 
+                <td class="col-sm-1">
+                  <a >
+                    <i class="material-icons">mode_edit</i>
+                  </a>
+                </td>
+                <td class="col-sm-1">
+                  <a>
+                    <i class="glyphicon glyphicon-trash">delete</i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+    
   </div>
+
 </div>
 
 

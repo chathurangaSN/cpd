@@ -3,24 +3,20 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  selector: 'app-admin-customers',
+  templateUrl: './admin-customers.component.html',
+  styleUrls: ['./admin-customers.component.css']
 })
-export class ProductsComponent implements OnInit {
+export class AdminCustomersComponent implements OnInit {
 
-  products: any;
+  customers:any;
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get(environment.apiURL + '/product').subscribe(data => {
+    this.http.get(environment.apiURL + '/user').subscribe(data => {
       // Read the result field from the JSON response.
      console.log(data);
-     this.products = data;
+     this.customers = data;
     });
-  }
-  post(){
-    
-  }
 
 }

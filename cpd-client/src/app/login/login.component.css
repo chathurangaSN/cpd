@@ -1,10 +1,7 @@
-body{
-    background-color: #64B5F6;
-    
-}
+
 .container-fluid{
     
-
+    height:580px; 
     background-color: #80CBC4;
 
 }
@@ -26,7 +23,7 @@ body{
     align-items: center;
     margin-left: 464px;
     margin-right: -453px;
-
+margin-top: 10px;
     background-color: rgb(136, 192, 238);
  
 }

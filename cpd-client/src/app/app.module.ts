@@ -22,7 +22,8 @@ import { AdminOrderDetailComponent } from './admin-order-detail/admin-order-deta
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
-import { AdminCustomerListComponent } from './admin-customer-list/admin-customer-list.component';
+import { AdminCustomersComponent } from './admin-customers/admin-customers.component';
+
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { AdminCustomerListComponent } from './admin-customer-list/admin-customer
     PageNotFoundComponent,
     ContactUsComponent,
     AdminHomeComponent,
-    AdminCustomerListComponent
+    AdminCustomersComponent,
+    
   ],
   imports: [
     BrowserModule,

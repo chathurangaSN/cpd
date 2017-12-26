@@ -11,6 +11,7 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { RegisterComponent } from './register/register.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { LoginComponent } from './login/login.component';
+import { AdminCustomersComponent } from './admin-customers/admin-customers.component';
 import { AdminProductsComponent } from './admin-products/admin-products.component';
 import { AdminProductDetailComponent } from './admin-product-detail/admin-product-detail.component';
 import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
@@ -33,8 +34,10 @@ const routes: Routes = [
   { path: 'admin/products',      component: AdminProductsComponent },
   { path: 'admin/products-detail/:id',      component: AdminProductDetailComponent },
   { path: 'admin/orders',      component: AdminOrdersComponent },
+  { path: 'admin/customers',    component: AdminCustomersComponent },
   { path: 'admin/order/:id',      component: AdminOrderDetailComponent },
   { path: 'contact-us',      component: ContactUsComponent },
+  
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
