@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -10,7 +11,7 @@ import { environment } from '../../environments/environment';
 export class ProductsComponent implements OnInit {
 
   products: any;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     this.http.get(environment.apiURL + '/product').subscribe(data => {
@@ -21,6 +22,10 @@ export class ProductsComponent implements OnInit {
   }
   post(){
     
+  }
+
+  showDetail(product){
+    this.router.navigate(['products/detail/'+ product._id]);
   }
 
 }
