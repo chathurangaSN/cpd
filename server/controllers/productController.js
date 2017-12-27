@@ -6,6 +6,7 @@ module.exports.getProduct = function(callback){
     console.log('Controller get method called');
     Product.find({},callback);
 }
+
 // save customer
 module.exports.saveProduct = function(obj, callback){
     console.log(obj.productName);

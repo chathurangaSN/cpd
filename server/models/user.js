@@ -22,8 +22,8 @@ var userSchema = mongoose.Schema({
         required:true
     },
     company:{
-        type:String,
-        required:true
+        type:String
+       
     },  
     userRole:{
         type:Number,
@@ -47,11 +47,11 @@ var userSchema = mongoose.Schema({
     },
     commentID:{
         type:String,
-        required:true
+        
     },
     orderID:{
         type:String,
-        required:true
+       
     },
 
     create_date:{

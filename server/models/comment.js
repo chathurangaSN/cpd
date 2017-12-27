@@ -10,20 +10,20 @@ var commentSchema = mongoose.Schema({
         required:true
     },
     description:{
-        type:String,
-        required:true
+        type:String
+        
     },
     orderID:{
-        type:Number,
-        required:true
+        type:Number
+        
     },
     userID:{
-        type:Number,
-        required:true
+        type:Number
+       
     },
     rate:{
-        type:Number,
-        required:true
+        type:Number
+        
     },
     create_date:{
         type:Date,
