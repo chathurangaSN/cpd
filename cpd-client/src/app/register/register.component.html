@@ -1,76 +1,82 @@
 <div class="container">
 
-<h2>Registration Form</h2>
+    <h2>Registration Form</h2>
 
-<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" >
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
 
-    <div class="form-group">
-        <label class="col-md-4 control-label" >First Name</label>
-        <input type="text" class="form-control" placeholder="First Name" autofocus name="firstName" ngModel>   
-    </div>
-   
-    <div class="form-group">
-        <label class="col-md-4 control-label" >Last Name</label>             
-        <input type="text" id="lastName" placeholder="Last Name" class="form-control" autofocus name="lastName" ngModel>   
-    </div>       
- 
-<div class="form-group">
-<label class="col-md-4 control-label" >Email</label>
-<input type="email" id="email" placeholder="Email" class="form-control" name="email" ngModel>
-</div>     
- 
-<div class="form-group">
-<label class="col-md-4 control-label" >Contact Number</label>
-<input type="text" id="contactNumber" placeholder="Contact Number" class="form-control" autofocus name="contactno" ngModel>   
-</div>
+        <div class="form-group">
+            <label class="col-md-4 control-label">First Name</label>
+            <input type="text" class="form-control" placeholder="First Name" autofocus name="firstName" ngModel>
+        </div>
 
-<div class="form-group">
-<label for="Upload photo">Upload photo</label>
-<input id="Upload photo" name="Upload photo" class="input-file" type="file" name="photo" ngModel>
-</div>
+        <div class="form-group">
+            <label class="col-md-4 control-label">Last Name</label>
+            <input type="text" id="lastName" placeholder="Last Name" class="form-control" autofocus name="lastName" ngModel>
+        </div>
 
-<div class="form-group">
-<label for="NIC" class="col-sm-3 control-label">NIC Number</label>
-<input type="text" id="NIC" placeholder="NIC" class="form-control" autofocus name="NIC" ngModel>   
-</div>
+        <div class="form-group">
+            <label class="col-md-4 control-label">Email</label>
+            <input type="email" id="email" placeholder="Email" class="form-control" name="email" ngModel>
+        </div>
 
-<div class="form-group">
-<label for="userName" class="col-sm-3 control-label">User Name</label>
-<input type="text" id="userName" placeholder="User Name" class="form-control" autofocus name="userName" ngModel>   
-</div>
+        <div class="form-group">
+            <label class="col-md-4 control-label">Contact Number</label>
+            <input type="text" id="contactNumber" placeholder="Contact Number" class="form-control" autofocus name="contactNo" ngModel>
+        </div>
 
-<div class="form-group">
-<label for="password" class="col-sm-3 control-label">Password</label>
-<input type="password" id="password" placeholder="Password" class="form-control" name="password" ngModel>
-</div>    
+        <div class="form-group">
+            <label for="Upload photo">Upload photo</label>
+            <input id="Upload photo" name="Upload photo" class="input-file" type="file" name="photo" ngModel>
+        </div>
 
-<div class="form-group">
-<label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
-<input type="date" id="birthDate" class="form-control" name="dateOfBirth" ngModel>
-</div>       
+        <div class="form-group">
+            <label for="NIC" class="col-sm-3 control-label">NIC Number</label>
+            <input type="text" id="NIC" placeholder="NIC" class="form-control" autofocus name="NIC" ngModel>
+        </div>
+
+        <div class="form-group">
+            <label for="userName" class="col-sm-3 control-label">User Name</label>
+            <input type="text" id="userName" placeholder="User Name" class="form-control" autofocus name="userName" ngModel>
+        </div>
+
+        <div class="form-group">
+            <label for="address" class="col-sm-3 control-label">Address</label>
+            <input type="text" id="address" placeholder="Address" class="form-control" name="address" ngModel>
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">Password</label>
+            <input type="password" id="password" placeholder="Password" class="form-control" name="password" ngModel>
+        </div>
+
+        <div class="form-group">
+            <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
+            <input type="date" id="birthDate" class="form-control" name="dateOfBirth" ngModel>
+        </div>
 
 
-<div class="form-group">
-<label for="country" class="col-sm-3 control-label">User Role</label>
-<select id="country" class="form-control" name="userRole" ngModel>
-<option>Customer</option>
-<option>Admin</option>
-</select>
-</div>            
+        <div class="form-group">
+            <label for="country" class="col-sm-3 control-label">User Role</label>
+            <select id="country" class="form-control" name="userRole" ngModel>
+                <option value="0">Customer</option>
+                <option value="1">Admin</option>
+            </select>
+        </div>
 
-<div class="form-group">
-<div class="col-sm-9 col-sm-offset-3">
-<div class="checkbox">
-<label>
-<input type="checkbox">I accept <a href="#">terms</a>
-</label>
-</div>
-</div>
-</div>    
-              
-<div class="form-group">
-<button type="submit" class="btn btn-primary btn-block">Register</button>
-</div>
+        <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox">I accept
+                        <a href="#">terms</a>
+                    </label>
+                </div>
+            </div>
+        </div>
 
-</form>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+        </div>
+
+    </form>
 </div>

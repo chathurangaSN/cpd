@@ -80,7 +80,7 @@ router.post('/api/user', function (req, res) {
         console.log(err);
         console.log(result);
         if(err){
-            throw err;
+            res.send(err) ;
         }
         res.send(result);
     });

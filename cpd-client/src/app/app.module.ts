@@ -2,10 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
-import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { Http, Response,Headers,RequestOptions  } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -50,15 +48,10 @@ import { AdminCustomersComponent } from './admin-customers/admin-customers.compo
     ContactUsComponent,
     AdminHomeComponent,
     AdminCustomersComponent,
-    
+
   ],
   imports: [
     BrowserModule,
-    HttpModule,
-    Http, 
-    Response,
-    Headers,
-    RequestOptions,
     FormsModule,
     NgbModule.forRoot(),
     AppRoutingModule,

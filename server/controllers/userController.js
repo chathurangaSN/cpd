@@ -8,7 +8,7 @@ module.exports.getUser = function(callback){
 }
 // save customer
 module.exports.saveUser = function(obj, callback){
-    console.log(obj.userName);
+    // console.log(obj.userName);
     console.log('Controller save method called');
     const user = new User({
         'userID':obj.userID, 
