@@ -1,10 +1,6 @@
 var mongoose = require('mongoose');
 
 var userSchema = mongoose.Schema({
-    userID:{
-        type:Number,
-        unique:true
-    },
     userName:{
         type:String,
         required:true

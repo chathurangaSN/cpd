@@ -27,5 +27,15 @@ export class ProductsComponent implements OnInit {
   showDetail(product){
     this.router.navigate(['products/detail/'+ product._id]);
   }
+  editDetail(product){
+    this.router.navigate(['admin/'+ product._id]);
+    
+  }
+
+  addProduct(){
+    this.router.navigate(['admin']);
+  }
+
+
 
 }

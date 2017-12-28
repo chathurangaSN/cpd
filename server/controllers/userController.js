@@ -11,7 +11,7 @@ module.exports.saveUser = function(obj, callback){
     // console.log(obj.userName);
     console.log('Controller save method called');
     const user = new User({
-        'userID':obj.userID, 
+         
         'userName':obj.userName, 
         'firstName':obj.firstName, 
         'lastName':obj.lastName, 
@@ -31,7 +31,7 @@ module.exports.updateUser = function(obj, callback){
     console.log('Controller update method called');
     var query = {'_id':obj._id};
     var newData = {
-        'userID':obj.userID, 
+        
         'userName':obj.userName, 
         'firstName':obj.firstName, 
         'lastName':obj.lastName, 

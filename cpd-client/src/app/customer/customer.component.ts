@@ -4,11 +4,11 @@ import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-admin-customers',
-  templateUrl: './admin-customers.component.html',
-  styleUrls: ['./admin-customers.component.css']
+  selector: 'app-customer',
+  templateUrl: './customer.component.html',
+  styleUrls: ['./customer.component.css']
 })
-export class AdminCustomersComponent implements OnInit {
+export class CustomerComponent implements OnInit {
 
   customers:any;
   constructor(private http: HttpClient, private router: Router ) { }
@@ -24,7 +24,15 @@ export class AdminCustomersComponent implements OnInit {
     
   }
 
-  showDetail(user){
-    this.router.navigate(['admin/customers/detail/'+ user._id]);
+  editDetail(user){
+    this.router.navigate(['register/'+ user._id]);
   }
+  showDetail(user){
+    this.router.navigate(['customer/detail/'+ user._id]);
+  }
+
 }
+
+
+
+

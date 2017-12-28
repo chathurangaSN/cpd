@@ -23,7 +23,7 @@
     align-items: center;
     margin-left: 464px;
     margin-right: -453px;
-margin-top: 10px;
+    margin-top: 10px;
     background-color: rgb(136, 192, 238);
  
 }
@@ -36,10 +36,5 @@ margin-top: 10px;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-}
-.new-account
-{
-    display: block;
-    margin-top: 10px;
 }
 

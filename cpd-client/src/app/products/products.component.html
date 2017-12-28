@@ -38,11 +38,8 @@
     </ul>
   </div>
 
-  <div class="col-sm-9" style="background-color:#B2DFDB">
-    <p>
-      <a href="#">Add Product</a>
+  <div class="col-sm-9" style="background-color:rgb(86, 163, 235)">
 
-    </p>
     <table class="col-sm-12">
       <thead>
         <tr>
@@ -60,24 +57,28 @@
 
           <td class="col-sm-1">
             <a>
-              <button class="btn btn-default" (click)="showDetail(product)">Edit</button>
+              <button class="btn btn-primary" (click)="editDetail(product)">Edit</button>
 
             </a>
           </td>
           <td class="col-sm-1">
             <a>
-              <button class="btn btn-default" (click)="showDetail(product)">View Detail</button>
+              <button class="btn btn-primary" (click)="showDetail(product)">View Detail</button>
             </a>
           </td>
           <td class="col-sm-1">
             <a>
-              <i class="glyphicon glyphicon-trash">delete</i>
+                <button class="btn btn-primary" (click)="delete(product)">Delete</button>
             </a>
           </td>
         </tr>
       </tbody>
-    </table>
 
+    </table>
+    <p>
+      <button class="btn btn-primary" (click)="addProduct()">Add Product</button>
+
+    </p>
 
   </div>
 

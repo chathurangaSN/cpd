@@ -12,7 +12,6 @@ module.exports.saveProduct = function(obj, callback){
     //console.log(obj.productName);
     console.log('Controller save method called');
     const product = new Product({
-        'productID' : obj.productID,
         'productName': obj.productName,
         'quantity':obj.quantity,
         'quality':obj.quality,
@@ -28,7 +27,6 @@ module.exports.updateProduct = function(obj, callback){
     console.log('Controller update method called');
     var query = {'_id':obj._id};
     var newData = {
-        'productID' : obj.productID,
         'productName': obj.productName,
         'quantity':obj.quantity,
         'quality':obj.quality,

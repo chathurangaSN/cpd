@@ -23,8 +23,8 @@ import { AdminOrderDetailComponent } from './admin-order-detail/admin-order-deta
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
-import { AdminCustomersComponent } from './admin-customers/admin-customers.component';
-import { AdminCustomersDetailComponent } from './admin-customers-detail/admin-customers-detail.component';
+import { CustomerComponent } from './customer/customer.component';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 
 
 
@@ -48,8 +48,8 @@ import { AdminCustomersDetailComponent } from './admin-customers-detail/admin-cu
     PageNotFoundComponent,
     ContactUsComponent,
     AdminHomeComponent,
-    AdminCustomersComponent,
-    AdminCustomersDetailComponent,
+    CustomerComponent,
+    CustomerDetailComponent,
 
   ],
   imports: [

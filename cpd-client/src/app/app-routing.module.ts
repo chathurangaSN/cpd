@@ -11,14 +11,14 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { RegisterComponent } from './register/register.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { LoginComponent } from './login/login.component';
-import { AdminCustomersComponent } from './admin-customers/admin-customers.component';
-import { AdminCustomersDetailComponent } from './admin-customers-detail/admin-customers-detail.component';
 import { AdminProductsComponent } from './admin-products/admin-products.component';
 import { AdminProductDetailComponent } from './admin-product-detail/admin-product-detail.component';
 import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
 import { AdminOrderDetailComponent } from './admin-order-detail/admin-order-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { CustomerComponent } from './customer/customer.component';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -29,14 +29,16 @@ const routes: Routes = [
   { path: 'orders',      component: OrderListComponent },
   { path: 'orders/detail/:id',      component: OrderDetailComponent },
   { path: 'register',      component: RegisterComponent },
+  { path: 'register/:id',      component: RegisterComponent },
+  { path: 'customer',      component: CustomerComponent  },
+  { path: 'customer/detail/:id',      component: CustomerDetailComponent },
   { path: 'me',      component: MyProfileComponent },
   { path: 'login',      component: LoginComponent },
   { path: 'admin',      component: AdminProductsComponent },
+  { path: 'admin/:id',      component: AdminProductsComponent },
   { path: 'admin/products',      component: AdminProductsComponent },
   { path: 'admin/products-detail/:id',      component: AdminProductDetailComponent },
   { path: 'admin/orders',      component: AdminOrdersComponent },
-  { path: 'admin/customers',    component: AdminCustomersComponent },
-  { path: 'admin/customers/detail/:id', component:AdminCustomersDetailComponent},
   { path: 'admin/order/:id',      component: AdminOrderDetailComponent },
   { path: 'contact-us',      component: ContactUsComponent },
   
