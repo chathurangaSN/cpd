@@ -1,5 +1,5 @@
 <p> </p>
-<div class="row">
+<div class="row" style="width:100%">
   <div class="col-sm-3">
     <form class="form-inline my-2 my-lg-0" style="margin-left:12px">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -39,46 +39,23 @@
   </div>
 
   <div class="col-sm-9" style="background-color:rgb(90, 199, 226)">
+<div class="row">
 
-    <table class="col-sm-12">
-      <thead>
-        <tr>
-          <th class="col-sm-7" data-field="name">Name</th>
-          <th class="col-sm-1" data-field="name">Edit</th>
-          <th class="col-sm-1" data-field="name">Detail</th>
-          <th class="col-sm-1" data-field="name">Delete</th>
-        </tr>
-      </thead>
 
-      <tbody>
-        <tr *ngFor="let product of products">
-
-          <td class="col-sm-7">{{product.productName}}</td>
-
-          <td class="col-sm-1">
+    <div class="card-group col-sm-4" *ngFor="let product of products" style="margin-top:12px;width:100%;">
+        <div class="card" >
+          <img class="card-img-top" src="../../assets/images/biscuit (7).jpg" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title text-primary">{{product.productName}}</h4>
+            <p class="card-text"><small class="text-muted">this is in brief do you want to see more detail click below link</small></p>
             <a>
-              <button class="btn btn-primary" (click)="editDetail(product)">Edit</button>
-
-            </a>
-          </td>
-          <td class="col-sm-1">
-            <a>
-              <button class="btn btn-primary" (click)="showDetail(product)">View Detail</button>
-            </a>
-          </td>
-          <td class="col-sm-1">
-            <a>
-                <button class="btn btn-primary" (click)="delete()">Delete</button>
-            </a>
-          </td>
-        </tr>
-      </tbody>
-
-    </table>
-    <p>
-      <button class="btn btn-primary" (click)="addProduct()">Add Product</button>
-
-    </p>
+                <button class="btn btn-primary" (click)="showDetail(product)">+See More</button>
+              </a>
+          </div>
+        </div>
+    </div>
+    
+  </div>
 
   </div>
 

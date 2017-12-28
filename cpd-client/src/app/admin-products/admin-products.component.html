@@ -4,33 +4,33 @@
     </div>
 </div>
 
-<table class="col-sm-12">
+<table class="col-sm-12 " style="background-color:rgb(0, 255, 234)">
     <thead>
         <tr>
-            <th class="col-sm-7" data-field="name">Name</th>
-            <th class="col-sm-1" data-field="name">Edit</th>
-            <th class="col-sm-1" data-field="name">Detail</th>
-            <th class="col-sm-1" data-field="name">Delete</th>
+            <th class="col-sm-7 border border-success" data-field="name">Name</th>
+            <th class="col-sm-1 border border-success" data-field="name">Edit</th>
+            <th class="col-sm-1 border border-success" data-field="name">Detail</th>
+            <th class="col-sm-1 border border-success" data-field="name">Delete</th>
         </tr>
     </thead>
 
     <tbody>
         <tr *ngFor="let product of products">
 
-            <td class="col-sm-7">{{product.productName}}</td>
+            <td class="col-sm-7 border border-success">{{product.productName}}</td>
 
-            <td class="col-sm-1">
+            <td class="col-sm-1 border border-success">
                 <a>
                     <button class="btn btn-primary" (click)="editDetail(product)">Edit</button>
 
                 </a>
             </td>
-            <td class="col-sm-1">
+            <td class="col-sm-1 border border-success">
                 <a>
                     <button class="btn btn-primary" (click)="showDetail(product)">View Detail</button>
                 </a>
             </td>
-            <td class="col-sm-1">
+            <td class="col-sm-1 border border-dark">
                 <a>
                     <button class="btn btn-primary" (click)="delete()">Delete</button>
                 </a>
