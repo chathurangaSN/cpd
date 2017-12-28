@@ -1,13 +1,19 @@
 //dependencies
 Product = require('../models/product');
 
-// get customer
+// get product
 module.exports.getProduct = function(callback){
     console.log('Controller get method called');
     Product.find({},callback);
 }
 
-// save customer
+// get product
+module.exports.getProductById = function(productId, callback){
+    console.log('Controller get product by id method called');
+    Product.findById(productId, callback);
+}
+
+// save product
 module.exports.saveProduct = function(obj, callback){
     //console.log(obj.productName);
     console.log('Controller save method called');

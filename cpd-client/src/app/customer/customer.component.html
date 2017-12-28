@@ -1,4 +1,4 @@
-<div class="container" style="background-color:#B2DFDB">
+<div class="container" style="background-color:rgb(90, 199, 226)">
     <div>
         <table class="col-sm-12">
             <thead>
@@ -16,17 +16,17 @@
                 <td class="col-sm-7">{{customer.userName}}</td>
                 <td class="col-sm-1">
                     <a >
-                        <button class="btn btn-default" (click)="editDetail(customer)">Edit</button>
+                        <button class="btn btn-primary" (click)="editDetail(customer)">Edit</button>
                     </a>
                   </td>
                 <td class="col-sm-1">
                   <a >
-                      <button class="btn btn-default" (click)="showDetail(customer)">View Detail</button>
+                      <button class="btn btn-primary" (click)="showDetail(customer)">View Detail</button>
                   </a>
                 </td>
                 <td class="col-sm-1">
                   <a>
-                    <i class="glyphicon glyphicon-trash">delete</i>
+                      <button class="btn btn-primary" (click)="delete(customer)">Delete</button>
                   </a>
                 </td>
               </tr>

@@ -30,6 +30,9 @@ export class CustomerComponent implements OnInit {
   showDetail(user){
     this.router.navigate(['customer/detail/'+ user._id]);
   }
+  delete(){
+    this.router.navigate(['home']);
+  }
 
 }
 

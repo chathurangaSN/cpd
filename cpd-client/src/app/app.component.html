@@ -1,15 +1,16 @@
-<div class="page-header" >
-    <h1>   w   </h1>      
-  </div>
-  
+<div class="page-header">
+  <h1> w </h1>
+</div>
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary ">
   <a class="navbar-brand" href="#">CPD</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+    aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item" >
+      <li class="nav-item">
         <a class="nav-link" routerLink="/home" routerLinkActive="active">Home </a>
       </li>
       <li class="nav-item">
@@ -19,19 +20,26 @@
         <a class="nav-link" routerLink="/orders" routerLinkActive="active">Orders</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" routerLink="/customer" routerLinkActive="active">Customers</a>
-        </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/admin" routerLinkActive="active">Add Product</a>
+        <a class="nav-link" routerLink="/customer" routerLinkActive="active">Customers</a>
       </li>
-     
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  routerLink="/admin" routerLinkActive="active" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Admin
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/admin/products" routerLinkActive="active">Products</a>
+          <a class="dropdown-item" routerLink="/admin/orders" routerLinkActive="active">Orders</a>
+        </div>
+      </li>
+
       <li class="nav-item">
         <a class="nav-link" routerLink="/me" routerLinkActive="active">My profile</a>
       </li>
-      
+
     </ul>
     <a class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/register" routerLinkActive="active">Signup</a>
-    <a class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/login" routerLinkActive="active" >Login</a>
+    <a class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/login" routerLinkActive="active">Login</a>
   </div>
 </nav>
 

@@ -35,7 +35,6 @@ const routes: Routes = [
   { path: 'me',      component: MyProfileComponent },
   { path: 'login',      component: LoginComponent },
   { path: 'admin',      component: AdminProductsComponent },
-  { path: 'admin/:id',      component: AdminProductsComponent },
   { path: 'admin/products',      component: AdminProductsComponent },
   { path: 'admin/products-detail/:id',      component: AdminProductDetailComponent },
   { path: 'admin/orders',      component: AdminOrdersComponent },

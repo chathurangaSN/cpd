@@ -122,6 +122,21 @@ router.get('/api/product', function(req,res){
     });
     
 });
+
+//product get request by id
+router.get('/api/product/:id', function(req,res){
+    const productId = req.params.id;
+    console.log(productId);
+    productController.getProductById(productId,function(err,product){
+        console.log(err);
+        console.log(product);
+        if(err){
+            throw err;
+        }
+        res.send(product)  
+    });
+    
+});
 //product post request
 router.post('/api/product', function (req, res) {
     console.log(req.body);

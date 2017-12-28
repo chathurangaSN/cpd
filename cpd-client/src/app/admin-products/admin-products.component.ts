@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-products',
@@ -9,26 +10,20 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./admin-products.component.css']
 })
 export class AdminProductsComponent implements OnInit {
+  products: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-  onSubmit(value: any) {
-    console.log(value);
-    return this.http.post( 
-      environment.apiURL + '/product', 
-      value, 
-      { headers: new HttpHeaders().set('Content-Type', 'application/json')}
-    )
-      .subscribe(
-      res => {
-        console.log(res);
-      },
-      err => {
-        console.log(err);
-      }
-      )
-  }
   ngOnInit() {
+    this.http.get(environment.apiURL + '/product').subscribe(data => {
+      // Read the result field from the JSON response.
+      console.log(data);
+      this.products = data;
+    });
+  }
+
+  showDetail(product) {
+    this.router.navigate(['admin/products-detail/' + product._id]);
   }
 
 }
