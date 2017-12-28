@@ -1,164 +1,52 @@
-<body>
-        <h2>Product Form</h2>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="form-group">
-                    
-                    <div class="col-sm-9">
-                        <input type="text" id="firstName" placeholder="First Name" class="form-control" autofocus>   
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="form-group">
-                 
-                    <div class="col-sm-9">
-                        <input type="text" id="lastName" placeholder="Last Name" class="form-control" autofocus>   
-                    </div>
-                </div>       
-            </div>          
-        </div>
-        
-        <div class="row">
-            <div class="col-sm-6">
-                    <div class="form-group">
-                        <div class="col-sm-9">
-                            <input type="email" id="email" placeholder="Email" class="form-control">
-                        </div>
-                    </div>     
-            </div>
-            <div  class="col-sm-6">
-                    <div class="form-group">
-                        <div class="col-sm-9">
-                            <input type="text" id="contactNumber" placeholder="Contact Number" class="form-control" autofocus>   
-                        </div>
-                    </div>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-sm-6">
-                    <div class="form-group">
-                            <label class="col-md-4 control-label" for="Upload photo">Upload photo</label>
-                            <div class="col-md-4">
-                              <input id="Upload photo" name="Upload photo" class="input-file" type="file">
-                            </div>
-                          </div>               
-            </div>
-            <div  class="col-sm-6">
-                    <div class="form-group">
-                            <label for="NIC" class="col-sm-3 control-label">NIC Number</label>
-                            <div class="col-sm-9">
-                                <input type="text" id="NIC" placeholder="NIC" class="form-control" autofocus>   
-                            </div>
-                          </div>    
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-sm-6">
-                    <div class="form-group">
-                            <label for="userName" class="col-sm-3 control-label">User Name</label>
-                            <div class="col-sm-9">
-                                <input type="text" id="userName" placeholder="User Name" class="form-control" autofocus>   
-                            </div>
-                          </div>               
-            </div>
-            <div  class="col-sm-6">
-                    <div class="form-group">
-                            <label for="password" class="col-sm-3 control-label">Password</label>
-                            <div class="col-sm-9">
-                                <input type="password" id="password" placeholder="Password" class="form-control">
-                            </div>
-                        </div>    
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-sm-6">
-                    <div class="form-group">
-                            <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
-                            <div class="col-sm-9">
-                                <input type="date" id="birthDate" class="form-control">
-                            </div>
-                        </div>       
-            </div>
-            <div  class="col-sm-6">
-                    <div class="form-group">
-                            <label class="control-label col-sm-3">Gender</label>
-                            <div class="col-sm-6">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <label class="radio-inline">
-                                            <input type="radio" id="femaleRadio" value="Female">Female
-                                        </label>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <label class="radio-inline">
-                                            <input type="radio" id="maleRadio" value="Male">Male
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>    
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-sm-6">
-                    <div class="form-group">
-                            <label for="company" class="col-sm-3 control-label">Company</label>
-                            <div class="col-sm-9">
-                                <select id="company" class="form-control">
-                                    <option>Civil Engineering</option>
-                                    <option>Software Engineering</option>
-                                    <option>Accounts</option>
-                                    <option>Financial</option>
-                                    <option>Mechantile</option>
-                                    <option>Private</option>
-                                    <option>Other</option>
-                                </select>
-                            </div>
-                        </div>               
-            </div>
-            <div  class="col-sm-6">
-                    <div class="form-group">
-                            <label for="country" class="col-sm-3 control-label">User Role</label>
-                            <div class="col-sm-9">
-                                <select id="country" class="form-control">
-                                    <option>Customer</option>
-                                    <option>Admin</option>
-                                </select>
-                            </div>
-                        </div>            
-            </div>
-        
+<h2>Product Form</h2>
+<div class="container">
+<form #productForm="ngForm" (ngSubmit)="onSubmit(productForm.value)">
+
+<div class="form-group">
+    <label class="col-md-4 control-label">Product Name</label>       
+    <input type="text" id="productName" placeholder="Product Name" class="form-control" name="productName" ngModel>   
+</div>
+
          
-        </div>
-        <div class="row">
+<div class="form-group">
+    <label class="col-md-4 control-label">Quantity</label>
+    <input type="text" id="quantity" placeholder="Quantity" class="form-control" name="quantity" ngModel>   
+</div>
         
-            <div class="col-sm-6">
-                    <div  class="col-sm-12">
-                            <div  class="col-sm-12">
-                                    <div class="form-group">
-                                            <div class="col-sm-9 col-sm-offset-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox">I accept <a href="#">terms</a>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>    
-                            </div>      
-                    </div>            
-            </div>
-            <div class="col-sm-6">
-                    <div class="form-group">
-                            <div class="col-sm-9 col-sm-offset-3">
-                                <button type="submit" class="btn btn-primary btn-block">Register</button>
-                            </div>
-                        </div>
-            </div>
-        </div>
+<div class="form-group">
+    <label class="col-md-4 control-label">Qualitity</label>   
+    <input type="text" id="qualitity" placeholder="Qualitity" class="form-control" name="quantity" ngModel>
+</div>     
+         
+            
+<div class="form-group">
+        <label class="col-md-4 control-label">Unit Prize</label>  
+<input type="text" id="unitPrize" placeholder="Unit Prize" class="form-control" name="quantity" ngModel>                        
+</div>
         
-        </body>
+<div class="form-group">
+        <label class="col-md-4 control-label">Ingrediant</label>  
+<input type="text" id="ingrediant" placeholder="Ingrediant" class="form-control" name="ingrediant" ngModel>                        
+</div>
+
+<div class="form-group">
+        <label class="col-md-4 control-label">Product Type</label>  
+<input type="text" id="productType" placeholder="Product Type" class="form-control" name="productType" ngModel>                        
+</div>
+
+<div class="form-group">
+        <label class="col-md-4 control-label">Comment ID</label>  
+<input type="text" id="commentID" placeholder="Comment ID" class="form-control" name="commentID" ngModel>                        
+</div>
+      
+    
+<div class="form-group">
+    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    
+</div>
+</form>
+</div>
+           
+        
+        
+       

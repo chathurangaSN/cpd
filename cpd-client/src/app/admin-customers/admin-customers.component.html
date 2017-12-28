@@ -6,6 +6,7 @@
           <tr>
             <th class="col-sm-7" data-field="name">Name</th>
             <th class="col-sm-1" data-field="name">Edit</th>
+            <th class="col-sm-1" data-field="name">View Detail</th>
             <th class="col-sm-1" data-field="name">Delete</th>
           </tr>
           </thead>
@@ -14,10 +15,14 @@
             <tr *ngFor="let customer of customers">
                 
               <td class="col-sm-7">{{customer.userName}}</td>
-
+              <td class="col-sm-1">
+                  <a >
+                      <button class="btn btn-default" (click)="showDetail(customer)">Edit</button>
+                  </a>
+                </td>
               <td class="col-sm-1">
                 <a >
-                  <i class="material-icons">mode_edit</i>
+                    <button class="btn btn-default" (click)="showDetail(customer)">View Detail</button>
                 </a>
               </td>
               <td class="col-sm-1">

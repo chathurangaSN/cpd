@@ -9,7 +9,7 @@ module.exports.getProduct = function(callback){
 
 // save customer
 module.exports.saveProduct = function(obj, callback){
-    console.log(obj.productName);
+    //console.log(obj.productName);
     console.log('Controller save method called');
     const product = new Product({
         'productID' : obj.productID,

@@ -24,6 +24,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminCustomersComponent } from './admin-customers/admin-customers.component';
+import { AdminCustomersDetailComponent } from './admin-customers-detail/admin-customers-detail.component';
 
 
 
@@ -48,6 +49,7 @@ import { AdminCustomersComponent } from './admin-customers/admin-customers.compo
     ContactUsComponent,
     AdminHomeComponent,
     AdminCustomersComponent,
+    AdminCustomersDetailComponent,
 
   ],
   imports: [

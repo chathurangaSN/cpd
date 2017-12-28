@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-customers',
@@ -10,7 +11,7 @@ import { environment } from '../../environments/environment';
 export class AdminCustomersComponent implements OnInit {
 
   customers:any;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router ) { }
 
   ngOnInit() {
     this.http.get(environment.apiURL + '/user').subscribe(data => {
@@ -18,6 +19,12 @@ export class AdminCustomersComponent implements OnInit {
      console.log(data);
      this.customers = data;
     });
+  }
+  post(){
+    
+  }
 
-}
+  showDetail(user){
+    this.router.navigate(['admin/customers/detail/'+ user._id]);
+  }
 }
