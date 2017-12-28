@@ -19,6 +19,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
+import { AdminProductNewComponent } from './admin-product-new/admin-product-new.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'login',      component: LoginComponent },
   { path: 'admin',      component: AdminProductsComponent },
   { path: 'admin/products',      component: AdminProductsComponent },
+  { path: 'admin/product-new',      component: AdminProductNewComponent },
   { path: 'admin/products-detail/:id',      component: AdminProductDetailComponent },
   { path: 'admin/orders',      component: AdminOrdersComponent },
   { path: 'admin/order/:id',      component: AdminOrderDetailComponent },

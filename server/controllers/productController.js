@@ -31,6 +31,7 @@ module.exports.saveProduct = function(obj, callback){
 }
 module.exports.updateProduct = function(obj, callback){
     console.log('Controller update method called');
+    console.log(obj);
     var query = {'_id':obj._id};
     var newData = {
         'productName': obj.productName,

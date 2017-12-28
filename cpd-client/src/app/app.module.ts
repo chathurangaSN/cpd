@@ -25,6 +25,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
+import { AdminProductNewComponent } from './admin-product-new/admin-product-new.component';
 
 
 
@@ -50,6 +51,7 @@ import { CustomerDetailComponent } from './customer-detail/customer-detail.compo
     AdminHomeComponent,
     CustomerComponent,
     CustomerDetailComponent,
+    AdminProductNewComponent,
 
   ],
   imports: [

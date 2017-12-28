@@ -9,27 +9,29 @@ import { Params, ActivatedRoute } from '@angular/router';
   styleUrls: ['./admin-product-detail.component.css']
 })
 export class AdminProductDetailComponent implements OnInit {
+  productId: any;
   product?: Object;
 
   constructor(private http: HttpClient, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: Params) => {
-      let productId = params['id'];
-      this.http.get(environment.apiURL + '/product/'+  productId).subscribe(data => {
+      this.productId = params['id'];
+      this.http.get(environment.apiURL + '/product/' + this.productId).subscribe(data => {
         // Read the result field from the JSON response.
         console.log(data);
         this.product = data;
         // this.productForm.value
       });
     });
-    
-    
+
+
   }
 
   onSubmit(value: any) {
     console.log(value);
-    return this.http.post(
+    value._id = this.productId;
+    return this.http.put(
       environment.apiURL + '/product',
       value,
       { headers: new HttpHeaders().set('Content-Type', 'application/json') }
@@ -44,6 +46,6 @@ export class AdminProductDetailComponent implements OnInit {
       )
   }
 
- 
+
 
 }

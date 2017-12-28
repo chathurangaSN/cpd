@@ -15,33 +15,33 @@
 
     <div class="form-group">
       <label class="col-md-4 control-label">Qualitity</label>
-      <input type="text" id="qualitity" placeholder="Qualitity" class="form-control" name="quality" ngModel>
+      <input type="text" id="qualitity" placeholder="Qualitity" class="form-control" name="quality" [(ngModel)]="product.quality">
     </div>
 
 
     <div class="form-group">
       <label class="col-md-4 control-label">Unit Prize</label>
-      <input type="text" id="unitPrize" placeholder="Unit Prize" class="form-control" name="unitPrize" ngModel>
+      <input type="text" id="unitPrize" placeholder="Unit Prize" class="form-control" name="unitPrize" [(ngModel)]="product.unitPrize">
     </div>
 
     <div class="form-group">
       <label class="col-md-4 control-label">Ingrediant</label>
-      <input type="text" id="ingrediant" placeholder="Ingrediant" class="form-control" name="ingredient" ngModel>
+      <input type="text" id="ingrediant" placeholder="Ingrediant" class="form-control" name="ingredient" [(ngModel)]="product.ingredient">
     </div>
 
     <div class="form-group">
       <label class="col-md-4 control-label">Product Type</label>
-      <input type="text" id="productType" placeholder="Product Type" class="form-control" name="productType" ngModel>
+      <input type="text" id="productType" placeholder="Product Type" class="form-control" name="productType" [(ngModel)]="product.productType">
     </div>
 
     <div class="form-group">
       <label class="col-md-4 control-label">Comment ID</label>
-      <input type="text" id="commentID" placeholder="Comment ID" class="form-control" name="commentID" ngModel>
+      <input type="text" id="commentID" placeholder="Comment ID" class="form-control" name="commentID" [(ngModel)]="product.commentID">
     </div>
 
 
     <div class="form-group">
-      <button type="submit" class="btn btn-primary btn-block">Submit</button>
+      <button type="submit" class="btn btn-primary btn-block">Update</button>
 
     </div>
   </form>
