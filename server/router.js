@@ -18,7 +18,7 @@ router.get('/api/customer', function(req,res){
         console.log(err);
         console.log(customer);
         if(err){
-            throw err;
+            res.send(err);
         }
         res.send(customer)  
     });
@@ -31,7 +31,7 @@ router.post('/api/customer', function (req, res) {
         console.log(err);
         console.log(result);
         if(err){
-            throw err;
+            res.send(err);
         }
         res.send(result);
     });
@@ -42,7 +42,7 @@ router.post('/api/customer', function (req, res) {
 router.put('/api/customer', function (req, res) {
     customerController.updateCustomer(req.body,function(err,result){
         if(err){
-            throw err;
+            res.send(err);
         }
         //res.send(result);
         res.send('the data is updated'); 
@@ -53,7 +53,7 @@ router.put('/api/customer', function (req, res) {
 router.delete('/api/customer', function (req, res) {
     customerController.deleteCustomer(req.body,function(err,result){
         if(err){
-            throw err;
+            res.send(err);
         }
         res.send('the data is deleted');   
     });
@@ -61,13 +61,28 @@ router.delete('/api/customer', function (req, res) {
 
 //user routings
 
+//user login
+router.post('/api/login', function(req,res){
+    console.log(req.body);
+    
+    userController.userLogin(req.body, function(err,user){
+        console.log(err);
+        console.log(user);
+        if(err){
+            res.send(err);
+        }
+        res.send(user)  
+    });
+    
+});
+
 //user get request
 router.get('/api/user', function(req,res){
     userController.getUser(function(err,user){
         console.log(err);
         console.log(user);
         if(err){
-            throw err;
+            res.send(err);
         }
         res.send(user)  
     });
@@ -91,7 +106,7 @@ router.post('/api/user', function (req, res) {
 router.put('/api/user', function (req, res) {
     userController.updateUser(req.body,function(err,result){
         if(err){
-            throw err;
+            res.send(err);
         }
         //res.send(result);
         res.send('the user is updated'); 
@@ -102,7 +117,7 @@ router.put('/api/user', function (req, res) {
 router.delete('/api/user', function (req, res) {
     userController.deleteUser(req.body,function(err,result){
         if(err){
-            throw err;
+            res.send(err);
         }
         res.send('the user is deleted');   
     });
@@ -116,7 +131,7 @@ router.get('/api/product', function(req,res){
         console.log(err);
         console.log(product);
         if(err){
-            throw err;
+            res.send(err);
         }
         res.send(product)  
     });
@@ -131,7 +146,7 @@ router.get('/api/product/:id', function(req,res){
         console.log(err);
         console.log(product);
         if(err){
-            throw err;
+            res.send(err);
         }
         res.send(product)  
     });
@@ -144,7 +159,7 @@ router.post('/api/product', function (req, res) {
         console.log(err);
         console.log(result);
         if(err){
-            throw err;
+            res.send(err);
         }
         res.send(result);
     });
@@ -155,7 +170,7 @@ router.post('/api/product', function (req, res) {
 router.put('/api/product', function (req, res) {
     productController.updateProduct(req.body,function(err,result){
         if(err){
-            throw err;
+            res.send(err);
         }
         //res.send(result);
         res.send('the product is updated'); 
@@ -166,7 +181,7 @@ router.put('/api/product', function (req, res) {
 router.delete('/api/product', function (req, res) {
     productController.deleteProduct(req.body,function(err,result){
         if(err){
-            throw err;
+            res.send(err);
         }
         res.send('the product is deleted');   
     });
@@ -180,7 +195,7 @@ router.get('/api/comment', function(req,res){
         console.log(err);
         console.log(comment);
         if(err){
-            throw err;
+            res.send(err);
         }
         res.send(comment)  
     });
@@ -193,7 +208,7 @@ router.post('/api/comment', function (req, res) {
         console.log(err);
         console.log(result);
         if(err){
-            throw err;
+            res.send(err);
         }
         res.send(result);
     });
@@ -204,7 +219,7 @@ router.post('/api/comment', function (req, res) {
 router.put('/api/comment', function (req, res) {
     commentController.updateComment(req.body,function(err,result){
         if(err){
-            throw err;
+            res.send(err);
         }
         //res.send(result);
         res.send('the comment is updated'); 
@@ -215,7 +230,7 @@ router.put('/api/comment', function (req, res) {
 router.delete('/api/comment', function (req, res) {
     commentController.deleteComment(req.body,function(err,result){
         if(err){
-            throw err;
+            res.send(err);
         }
         res.send('the comment is deleted');   
     });
@@ -229,7 +244,7 @@ router.get('/api/order', function(req,res){
         console.log(err);
         console.log(order);
         if(err){
-            throw err;
+            res.send(err);
         }
         res.send(order)  
     });
@@ -242,7 +257,7 @@ router.post('/api/order', function (req, res) {
         console.log(err);
         console.log(result);
         if(err){
-            throw err;
+            res.send(err);
         }
         res.send(result);
     });
@@ -253,7 +268,7 @@ router.post('/api/order', function (req, res) {
 router.put('/api/order', function (req, res) {
     orderController.updateOrder(req.body,function(err,result){
         if(err){
-            throw err;
+            res.send(err);
         }
         //res.send(result);
         res.send('the order is updated'); 
@@ -264,7 +279,7 @@ router.put('/api/order', function (req, res) {
 router.delete('/api/order', function (req, res) {
     orderController.deleteOrder(req.body,function(err,result){
         if(err){
-            throw err;
+            res.send(err);
         }
         res.send('the order is deleted');   
     });

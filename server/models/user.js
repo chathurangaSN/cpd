@@ -1,58 +1,57 @@
 var mongoose = require('mongoose');
 
 var userSchema = mongoose.Schema({
-    userName:{
-        type:String,
-        required:true
+    userName: {
+        type: String,
+        required: true
     },
-    firstName:{
-        type:String,
-        required:true
+    firstName: {
+        type: String,
+        required: true
     },
-    lastName:{
-        type:String,
-        required:true
+    lastName: {
+        type: String,
+        required: true
     },
-    email:{
-        type:String,
-        required:true
+    email: {
+        type: String,
+        required: true
     },
-    company:{
-        type:String
-       
-    },  
-    userRole:{
-        type:Number,
-        required:true
+    company: {
+        type: String
+
     },
-    contactNo:{
-        type:Number,
-        required:true
+    userRole: {
+        type: Number,
+        default: 0
     },
-    address:{
-        type:String,
-        required:true
-    },    
-    NIC:{
-        type:String,
-        required:true
-    },   
-    password:{
-        type:String,
-        required:true
+    contactNo: {
+        type: Number,
+        required: true
     },
-    commentID:{
-        type:String,
-        
+    address: {
+        type: String,
+        required: true
     },
-    orderID:{
-        type:String,
-       
+    NIC: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    commentID: {
+        type: String,
+
+    },
+    orderID: {
+        type: String,
     },
 
-    create_date:{
-        type:Date,
-        default:Date.now
+    create_date: {
+        type: Date,
+        default: Date.now
     }
 });
 var User = mongoose.model('User', userSchema);

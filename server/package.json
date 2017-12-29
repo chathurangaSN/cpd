@@ -9,9 +9,13 @@
   "author": "sachith chathuranga nanayakkara",
   "license": "ISC",
   "dependencies": {
+    "async-waterfall": "^0.1.5",
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
+    "common-errors": "^1.0.5",
     "cors": "^2.8.4",
     "express": "^4.16.2",
+    "http-status": "^1.0.1",
     "mongoose": "^4.13.4",
     "nodemon": "^1.12.1"
   }
