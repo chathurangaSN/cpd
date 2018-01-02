@@ -4,6 +4,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CookieModule } from 'ngx-cookie';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -26,6 +27,7 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 import { AdminProductNewComponent } from './admin-product-new/admin-product-new.component';
+import { AppCommonService } from './app-common.service';
 
 
 
@@ -59,9 +61,12 @@ import { AdminProductNewComponent } from './admin-product-new/admin-product-new.
     FormsModule,
     NgbModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CookieModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    AppCommonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

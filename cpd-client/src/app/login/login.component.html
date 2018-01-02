@@ -7,13 +7,23 @@
             <div class="account-walls">
                 <h1 class="text-center">Log in</h1>
                 <img class="profile-img" src="../../assets/images/prof.png" alt="this is image">
-                <form class="form-signin" #loginForm="ngForm" (ngSubmit)="onLogin(loginForm.value)">
+                <form class="form-signin" #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
 
                     <div class="alert alert-danger" role="alert" *ngIf="!isLoginSuccess">
                         User login failed
                     </div>
-                    <input type="text" class="form-control" placeholder="Email" name="email" [(ngModel)]="user.email" required autofocus>
-                    <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="user.password" required>
+                    <input type="text" class="form-control" placeholder="Email" name="email" [(ngModel)]="user.email" required autofocus  #email="ngModel">
+                    <div *ngIf="isLoginFormSubmited && email.errors " class="alert alert-danger">
+                        <div>
+                            Username is required 
+                        </div>
+                    </div>
+                    <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="user.password" required  #password="ngModel">
+                    <div *ngIf="isLoginFormSubmited && password.errors " class="alert alert-danger">
+                        <div>
+                            Password is required
+                        </div>
+                    </div>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
                     <label class="checkbox pull-left">
                         <input type="checkbox" value="remember-me">Remember me</label>

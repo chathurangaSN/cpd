@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  isRegFormSubmited: boolean;
   user: any = {};
   isLoginSuccess: boolean;
   isLoginFail: boolean;
@@ -19,31 +20,35 @@ export class RegisterComponent implements OnInit {
   constructor(private router: Router, private http: HttpClient) {
     this.isLoginSuccess = false;
     this.isLoginFail = false;
+    this.isRegFormSubmited = false;
+
   }
 
-  onSubmit(value: any) {
-    console.log(value);
-    return this.http.post(
-      environment.apiURL + '/user',
-      value,
-      { headers: new HttpHeaders().set('Content-Type', 'application/json') }
-    )
-      .subscribe(
-      res => {
-        console.log(res);
-        // this.router.navigate(['login']);
-        this.user = {};
-        this.isLoginSuccess = true;
-        this.isLoginFail = false;
-        window.scrollTo(0, 0);
-      },
-      err => {
-        console.log(err);
-        this.isLoginSuccess = false;
-        this.isLoginFail = true;
-        window.scrollTo(0, 0);
-      }
+  onSubmit(form: any) {
+    this.isRegFormSubmited = true;
+    console.log(form);
+    if (form.valid) {
+      return this.http.post(
+        environment.apiURL + '/user',
+        form.value,
+        { headers: new HttpHeaders().set('Content-Type', 'application/json') }
       )
+        .subscribe(
+        res => {
+          console.log(res);
+          // this.router.navigate(['login']);
+          form.value = {};
+          this.isLoginSuccess = true;
+          this.isLoginFail = false;
+          window.scrollTo(0, 0);
+        },
+        err => {
+          console.log(err);
+          this.isLoginSuccess = false;
+          this.isLoginFail = true;
+          window.scrollTo(0, 0);
+        });
+    }
 
 
   }

@@ -17,7 +17,7 @@ module.exports.userLogin = function (credentials, callback) {
         },
         function (user, cb) {
             if (!user) {
-                return cb(new errors.NotFoundError('User not found for given email'));
+                return cb({isLoginSuccess: false, message : 'User not found for given email'});
             }
             cb(null, user);
         },

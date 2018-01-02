@@ -21,8 +21,8 @@
       </li>
 
       
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle"  routerLink="/admin" routerLinkActive="active" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item dropdown" *ngIf="isDisplayAdminMenu && isLoginSuccess">
+        <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Admin
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -37,8 +37,9 @@
       </li>
 
     </ul>
-    <a class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/register" routerLinkActive="active">Signup</a>
-    <a class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/login" routerLinkActive="active">Login</a>
+    <a *ngIf="!isLoginSuccess" class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/register" routerLinkActive="active">Signup</a>
+    <a *ngIf="!isLoginSuccess" class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/login" routerLinkActive="active">Login</a>
+    <a *ngIf="isLoginSuccess" class="btn btn-primary my-2 my-sm-0 mr-3" (click)="userLogOut()">Logout</a>
   </div>
 </nav>
 
