@@ -31,11 +31,11 @@ export class LoginComponent implements OnInit {
       res => {
         console.log(res);
         // console.log(res);
-        if(!res.isLoginSuccess){
+        //if(!res.isLoginSuccess){
           this.isLoginSuccess = false;
-        } else {
-          this.router.navigate(['home']);
-        }
+        //} else {
+        //  this.router.navigate(['home']);
+        //}
 
         this.user = {};
       },
