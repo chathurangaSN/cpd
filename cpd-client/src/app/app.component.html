@@ -38,7 +38,7 @@
 
     </ul>
     <a class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/cart" routerLinkActive="active">
-      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+      <i class="fa fa-shopping-cart" aria-hidden="true"></i> {{cartItems.length}}
     </a>
     <a *ngIf="!isLoginSuccess" class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/register" routerLinkActive="active">Signup</a>
     <a *ngIf="!isLoginSuccess" class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/login" routerLinkActive="active">Login</a>

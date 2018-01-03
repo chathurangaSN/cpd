@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  cartItems: any;
   loggedUserData: any;
   isLoginSuccess: boolean;
   isDisplayAdminMenu: boolean;
@@ -47,6 +48,14 @@ export class AppComponent {
             this.isDisplayAdminMenu = false;
           }
         } 
+      }
+    );
+    
+    this.cartItems = this.cookieService.getObject('cartItems');
+    
+    this.appCommonService.onCartItemAdd.subscribe(
+      res => {
+        this.cartItems = res;
       }
     )
   }

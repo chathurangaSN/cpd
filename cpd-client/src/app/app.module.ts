@@ -57,7 +57,6 @@ import { CartComponent } from './cart/cart.component';
     CustomerDetailComponent,
     AdminProductNewComponent,
     CartComponent,
-    AngularFontAwesomeModule
   ],
   imports: [
     BrowserModule,
@@ -65,7 +64,8 @@ import { CartComponent } from './cart/cart.component';
     NgbModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    CookieModule.forRoot()
+    CookieModule.forRoot(),
+    AngularFontAwesomeModule
   ],
   providers: [
     AppCommonService

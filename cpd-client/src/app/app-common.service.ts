@@ -21,6 +21,7 @@ export class AppCommonService {
   set CartItems(cartItems){
     this.cartItems = cartItems;
     this.cookieService.putObject('cartItems', this.cartItems);
+    this.onCartItemAdd.next(this.cartItems);
   }
 
   get CartItems(){
@@ -28,6 +29,7 @@ export class AppCommonService {
   }
   
   public onLogginSuccess = new Subject<boolean>();
+  public onCartItemAdd = new Subject<any>();
 
   constructor(    
     private cookieService: CookieService
