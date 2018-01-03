@@ -4,9 +4,8 @@
 
     <div class="form-group">
       <label class="col-md-4 control-label text-primary">Product Name</label>
-      <input type="text" id="productName" placeholder="Product Name" class="form-control" name="productName"  ngModel>
+      <input type="text" id="productName" placeholder="Product Name" class="form-control" name="productName"  ngModel required minlength="4" #firstName="ngModel">
     </div>
-
 
     <div class="form-group">
       <label class="col-md-4 control-label text-primary">Quantity</label>

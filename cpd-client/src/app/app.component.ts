@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppCommonService } from './app-common.service';
 import { CookieService } from 'ngx-cookie';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ export class AppComponent {
   isDisplayAdminMenu: boolean;
   constructor(
     private cookieService: CookieService,
+    private router: Router,
     private appCommonService: AppCommonService
   ) {
     this.isDisplayAdminMenu = false;
@@ -53,6 +55,10 @@ export class AppComponent {
     this.isLoginSuccess = false;
     this.appCommonService.IsUserLoggedIn = false;
     this.cookieService.removeAll();
+  }
+
+  loadCartView(){
+    this.router.navigate(['cart']);
   }
 
 }

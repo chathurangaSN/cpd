@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CookieModule } from 'ngx-cookie';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -28,6 +29,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 import { AdminProductNewComponent } from './admin-product-new/admin-product-new.component';
 import { AppCommonService } from './app-common.service';
+import { CartComponent } from './cart/cart.component';
 
 
 
@@ -54,7 +56,8 @@ import { AppCommonService } from './app-common.service';
     CustomerComponent,
     CustomerDetailComponent,
     AdminProductNewComponent,
-
+    CartComponent,
+    AngularFontAwesomeModule
   ],
   imports: [
     BrowserModule,

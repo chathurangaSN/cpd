@@ -20,6 +20,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 import { AdminProductNewComponent } from './admin-product-new/admin-product-new.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -42,6 +43,7 @@ const routes: Routes = [
   { path: 'admin/orders',      component: AdminOrdersComponent },
   { path: 'admin/order/:id',      component: AdminOrderDetailComponent },
   { path: 'contact-us',      component: ContactUsComponent },
+  { path: 'cart',      component: CartComponent },
   
   { path: '',
     redirectTo: '/home',

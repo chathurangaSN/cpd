@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
+import { CookieService } from 'ngx-cookie';
 
 @Injectable()
 export class AppCommonService {
@@ -14,9 +15,22 @@ export class AppCommonService {
   get IsUserLoggedIn(): boolean {
     return this.isUserLoggedIn;
   }
+
+  private cartItems: any[];
+
+  set CartItems(cartItems){
+    this.cartItems = cartItems;
+    this.cookieService.putObject('cartItems', this.cartItems);
+  }
+
+  get CartItems(){
+    return this.cartItems;
+  }
   
   public onLogginSuccess = new Subject<boolean>();
 
-  constructor() { }
+  constructor(    
+    private cookieService: CookieService
+  ) { }
 
 }

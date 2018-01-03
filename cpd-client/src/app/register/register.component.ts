@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   isRegFormSubmited: boolean;
-  user: any = {};
+  firstName: string;
   isLoginSuccess: boolean;
   isLoginFail: boolean;
 
@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
     this.isLoginSuccess = false;
     this.isLoginFail = false;
     this.isRegFormSubmited = false;
-
+    this.firstName = 'Janith';
   }
 
   onSubmit(form: any) {

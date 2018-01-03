@@ -19,12 +19,13 @@
 }
 .account-walls
 {
-    
+    border:outset;
+   border-color: rgb(136, 192, 238);
     align-items: center;
     margin-left: 464px;
     margin-right: -453px;
     margin-top: 10px;
-    background-color: rgb(136, 192, 238);
+    background-color: rgb(15, 155, 190);
  
 }
 .profile-img
