@@ -12,6 +12,7 @@ import { AppCommonService } from '../app-common.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  loginData: any;
   isLoginFormSubmited: boolean;
   isLoginSuccess: boolean;
   user: any = {};
@@ -43,7 +44,8 @@ export class LoginComponent implements OnInit {
         .subscribe( res => {
           console.log(res);
           // console.log(res);
-          if ( res.isLoginSuccess === false) {
+          this.loginData = res;
+          if ( this.loginData.isLoginSuccess === false) {
             this.isLoginSuccess = false;
           } else {
             this.router.navigate(['home']);
