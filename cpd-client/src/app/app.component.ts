@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  cartItems: any;
+  cartItems?: any;
   loggedUserData: any;
   isLoginSuccess: boolean;
   isDisplayAdminMenu: boolean;
@@ -63,11 +63,15 @@ export class AppComponent {
   userLogOut() {
     this.isLoginSuccess = false;
     this.appCommonService.IsUserLoggedIn = false;
-    this.cookieService.removeAll();
+    this.cookieService.remove('loginData');
   }
 
   loadCartView(){
     this.router.navigate(['cart']);
+  }
+
+  getOrders(){
+    this.router.navigate(['orders/']);
   }
 
 }

@@ -11,21 +11,21 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/home" routerLinkActive="active">Home </a>
+        <a class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/home" routerLinkActive="active">Home </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/products" routerLinkActive="active">Products List</a>
+        <a class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/products" routerLinkActive="active">Products List</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/orders" routerLinkActive="active">Orders</a>
+        <a class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/orders" routerLinkActive="active">Orders</a>
       </li>
 
       
       <li class="nav-item dropdown" *ngIf="isDisplayAdminMenu && isLoginSuccess">
-        <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle btn btn-primary my-2 my-sm-0 mr-3"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Admin
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu " aria-labelledby="navbarDropdown">
           <a class="dropdown-item bg-primary text-danger" routerLink="/admin/products" routerLinkActive="active">Products</a>
           <a class="dropdown-item bg-success" routerLink="/admin/orders" routerLinkActive="active">Orders</a>
           <a class="dropdown-item bg-info" routerLink="/customer" routerLinkActive="active">Customers</a>
@@ -33,12 +33,12 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink="/me" routerLinkActive="active">My profile</a>
+        <a class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/me" routerLinkActive="active">My profile</a>
       </li>
 
     </ul>
     <a class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/cart" routerLinkActive="active">
-      <i class="fa fa-shopping-cart" aria-hidden="true"></i> {{cartItems.length}}
+      <i class="fa fa-shopping-cart" aria-hidden="true"></i> {{cartItems?.length}}
     </a>
     <a *ngIf="!isLoginSuccess" class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/register" routerLinkActive="active">Signup</a>
     <a *ngIf="!isLoginSuccess" class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/login" routerLinkActive="active">Login</a>

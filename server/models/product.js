@@ -9,16 +9,12 @@ var productSchema = mongoose.Schema({
         type:Number
        
     },
-    quality:{
-        type:String,
-        required:true
-    },
     unitPrize:{
         type:Number,
         required:true
     },
     ingredient:{
-        type:String,
+        type:[productSchema],
         required:true
     },
     productType:{
