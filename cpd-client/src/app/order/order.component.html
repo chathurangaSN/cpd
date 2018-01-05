@@ -1,14 +1,48 @@
-<div class="container">
-    <p>
-        order works!
-    </p>
-    <div *ngFor= "let order of orders">
-        <ul>
-            <li >{{order.userId}}</li>           
-            <li>  {{order.orderItems.productName}}</li>
-            <li>  {{order.create_date}}</li>
-        </ul>
+<div class="container-fluid">
+    <h1>Order list</h1>
+    <table class="table">
+
+        <tr class="thead-dark">
+            <th>Date</th>
+            <th>Product</th>
+            <th>unit price</th>
+            <th>Quantiy </th>
+            <th>Order Price</th>
+            <th>Stage</th>
+            <th>Delete</th>
+        </tr>
+
+
+        <tr *ngFor="let order of orders">
+            <td>{{order.create_date}}</td>
+            <td>
+                <ul>
+                    <li *ngFor="let item of order.orderItems">{{item.product.productName}}</li>
+                </ul>
+               
+            </td>
+
+            <td>{{4}}</td>
+            <td style="text-align:right">Rs:{{899 |number : '1.2-2'}}</td>
+            <td>Rs 1000.00</td>
+            <td style="text-align:right">
+                <select class="custom-select" id="inputGroupSelect02">
+                    <option selected>pending...</option>
+                    <option value="1">Approved</option>
+                    <option value="2">Production</option>
+                    <option value="3">Delivery</option>
+                </select>
+            </td>
+            <td>
+                <button class="btn btn-primary" style="text-align:right" style="height:28px;text-align:center; padding: 0rem 0rem;">butten</button>
+            </td>
+        </tr>
+
+    </table>
+    <div class="totalDiv">
+        Total Price =
+        <span class="total">Rs: {{2|number : '1.2-2'}}</span>
     </div>
-        
-      
+    <button type="button" class="btn btn-primary"> Button </button>
+
 </div>

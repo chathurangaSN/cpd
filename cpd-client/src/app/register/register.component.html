@@ -39,11 +39,21 @@
         <div class="form-group">
             <label class="col-md-4 control-label">Email</label>
             <input type="email" id="email" placeholder="Email" class="form-control" name="email" ngModel required #email="ngModel">
+            <div *ngIf="email.errors && (email.dirty ||email.toched || isRegFormSubmited)" class="alert alert-danger">
+                    <div>
+                       email is required
+                    </div>
+                </div>
         </div>
 
         <div class="form-group">
             <label for="userName" class="col-sm-3 control-label">User Name</label>
             <input type="text" id="userName" placeholder="User Name" class="form-control" name="userName" ngModel required #userName="ngModel">
+            <div *ngIf="userName.errors && (userName.dirty ||userName.toched || isRegFormSubmited)" class="alert alert-danger">
+                    <div>
+                       userName is required
+                    </div>
+                </div>
         </div>
 
 
@@ -56,13 +66,25 @@
         <div class="form-group">
             <label for="password" class="col-sm-3 control-label">Confirm Password</label>
             <input type="password" id="cpassword" placeholder="Confirm Password" class="form-control" name="cpassword" ngModel required
-                #cpassword="ngModel">
+#cpassword="ngModel">
         </div>
 
         <div class="form-group">
             <label class="col-md-4 control-label">Contact Number</label>
-            <input type="text" id="contactNumber" placeholder="Contact Number" class="form-control" name="contactNo" ngModel required
+            <input type="text" id="contactNumber" placeholder="Contact Number" class="form-control" name="contactNo" ngModel required pattern="[0-9]*" minlength="10" maxlength="10"
                 #contactNo="ngModel">
+                <div *ngIf=" contactNo.errors && (contactNo.dirty ||contactNo.toched || isRegFormSubmited)" class="alert alert-danger">
+                        <div [hidden]="!contactNo.errors.required">
+                            contact no is required
+                        </div>
+                        <div [hidden]="!contactNo.errors.pattern">
+                            Don't enter letters
+                        </div>
+                        <div [hidden]="!contactNo.errors.minlength">
+                                Please enter valid number
+                            </div>
+        
+                    </div>
         </div>
 
         <div class="form-group">

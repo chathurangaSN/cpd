@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   isLoginFormSubmited: boolean;
   isLoginSuccess: boolean;
   user: any = {};
+  
   constructor(
     private router: Router, 
     private http: HttpClient,

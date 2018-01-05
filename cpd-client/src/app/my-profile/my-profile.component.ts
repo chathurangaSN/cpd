@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie';
 
 @Component({
   selector: 'app-my-profile',
@@ -7,10 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyProfileComponent implements OnInit {
 
-  constructor() { }
+  loggedUserData: any;
+  isUserLogged: boolean;
+  constructor(
+    private http: HttpClient,
+    private cookieService: CookieService,
+  ) { }
 
   ngOnInit() {
+
+    if (this.cookieService.getObject('loginData')) {
+      this.loggedUserData = this.cookieService.getObject('loginData');
+      console.log(this.loggedUserData.user);
+     
+    }
   }
-   
+
 
 }

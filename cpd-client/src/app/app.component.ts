@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   cartItems?: any;
   loggedUserData: any;
@@ -47,12 +48,12 @@ export class AppComponent {
           } else {
             this.isDisplayAdminMenu = false;
           }
-        } 
+        }
       }
     );
-    
+
     this.cartItems = this.cookieService.getObject('cartItems');
-    
+
     this.appCommonService.onCartItemAdd.subscribe(
       res => {
         this.cartItems = res;
@@ -64,13 +65,15 @@ export class AppComponent {
     this.isLoginSuccess = false;
     this.appCommonService.IsUserLoggedIn = false;
     this.cookieService.remove('loginData');
+    this.router.navigate(['home/']);
+
   }
 
-  loadCartView(){
+  loadCartView() {
     this.router.navigate(['cart']);
   }
 
-  getOrders(){
+  getOrders() {
     this.router.navigate(['orders/']);
   }
 

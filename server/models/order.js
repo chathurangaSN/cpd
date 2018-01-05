@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var orderSchema = mongoose.Schema({
 
     userId:{
-        type: String,
+        type:  mongoose.Schema.ObjectId,
         required:true
     },
     orderItems:{

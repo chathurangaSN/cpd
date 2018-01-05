@@ -36,8 +36,8 @@ export class RegisterComponent implements OnInit {
         .subscribe(
         res => {
           console.log(res);
-          // this.router.navigate(['login']);
-          form.value = {};
+          this.router.navigate(['login']);
+          // form.value = {};
           this.isLoginSuccess = true;
           this.isLoginFail = false;
           window.scrollTo(0, 0);

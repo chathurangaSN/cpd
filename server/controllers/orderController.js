@@ -1,3 +1,5 @@
+var mongoose = require('mongoose');
+
 //dependencies
 Order = require('../models/order');
 
@@ -5,7 +7,14 @@ Order = require('../models/order');
 
 module.exports.getOrder = function(callback){
     console.log('Controller get method called');
-    Order.find({},callback);
+    Order.find({}).populate({
+      path:  'userId',			
+      model: 'User' }).exec(callback);
+}
+
+module.exports.getOrderByUserId = function(userId, callback){
+    console.log('Controller get order by userId method called');
+    Order.find({'userId' : userId},callback);
 }
 
 module.exports.getOrderByID = function(userId,callback){

@@ -250,6 +250,21 @@ router.get('/api/order', function(req,res){
     });
     
 });
+
+//order get request by user id
+router.get('/api/orderbyuser/:userId', function(req,res){
+    const userId = req.params.userId;
+    console.log(req.params);
+    orderController.getOrderByUserId(userId, function(err,order){
+        console.log(err);
+        console.log(order);
+        if(err){
+            res.send(err);
+        }
+        res.send(order)  
+    });
+    
+});
 //order post request
 router.post('/api/order', function (req, res) {
     console.log(req.body);
@@ -284,6 +299,8 @@ router.delete('/api/order', function (req, res) {
         res.send('the order is deleted');   
     });
 });
+
+
 
 
 //return router

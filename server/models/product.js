@@ -14,7 +14,7 @@ var productSchema = mongoose.Schema({
         required:true
     },
     ingredient:{
-        type:[productSchema],
+        type:String,
         required:true
     },
     productType:{

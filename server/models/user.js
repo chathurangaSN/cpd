@@ -23,7 +23,7 @@ var userSchema = mongoose.Schema({
     },
     userRole: {
         type: Number,
-        default: 0
+        default: 1
     },
     contactNo: {
         type: Number,

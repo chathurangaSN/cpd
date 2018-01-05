@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
+import { CookieService } from 'ngx-cookie';
 
 @Component({
   selector: 'app-order',
@@ -10,13 +11,25 @@ import { environment } from '../../environments/environment';
 })
 
 export class OrderComponent implements OnInit {
+  loggedUserData: any;
 
   orders: any;
   
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(    
+    private cookieService: CookieService,
+    private http: HttpClient, 
+    private router: Router) { }
 
   ngOnInit() {
-    this.http.get(environment.apiURL + '/order').subscribe(data => {
+
+    if (this.cookieService.getObject('loginData')) {
+      this.loggedUserData = this.cookieService.getObject('loginData');
+      
+      console.log(this.loggedUserData.user);
+     
+    }
+
+    this.http.get(environment.apiURL + '/orderbyuser/'+ this.loggedUserData.user._id).subscribe(data => {
       // Read the result field from the JSON response.
       console.log(data);
       this.orders = data;

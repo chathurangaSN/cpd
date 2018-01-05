@@ -17,7 +17,10 @@
         <a class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/products" routerLinkActive="active">Products List</a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/orders" routerLinkActive="active">Orders</a>
+        <a class="btn btn-primary my-2 my-sm-0 mr-3" *ngIf="isDisplayAdminMenu && isLoginSuccess" routerLink="/admin/orders" routerLinkActive="active">Orders</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn btn-primary my-2 my-sm-0 mr-3" *ngIf="isLoginSuccess" routerLink="/orders" routerLinkActive="active">My Orders</a>
       </li>
 
       
@@ -33,11 +36,11 @@
       </li>
 
       <li class="nav-item">
-        <a class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/me" routerLinkActive="active">My profile</a>
+        <a class="btn btn-primary my-2 my-sm-0 mr-3" *ngIf="isLoginSuccess" routerLink="/me" routerLinkActive="active">My profile</a>
       </li>
 
     </ul>
-    <a class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/cart" routerLinkActive="active">
+    <a class="btn btn-primary my-2 my-sm-0 mr-3" *ngIf="isLoginSuccess" routerLink="/cart" routerLinkActive="active">
       <i class="fa fa-shopping-cart" aria-hidden="true"></i> {{cartItems?.length}}
     </a>
     <a *ngIf="!isLoginSuccess" class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/register" routerLinkActive="active">Signup</a>
