@@ -3,10 +3,10 @@ Order = require('../models/order');
 
 // get order
 
-// module.exports.getOrder = function(callback){
-//     console.log('Controller get method called');
-//     Order.find({},callback);
-// }
+module.exports.getOrder = function(callback){
+    console.log('Controller get method called');
+    Order.find({},callback);
+}
 
 module.exports.getOrderByID = function(userId,callback){
   console.log('Controller get order  by userId method called');

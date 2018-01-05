@@ -1,5 +1,14 @@
 <div class="container">
     <p>
         order works!
-      </p>
+    </p>
+    <div *ngFor= "let order of orders">
+        <ul>
+            <li >{{order.userId}}</li>           
+            <li>  {{order.orderItems.productName}}</li>
+            <li>  {{order.create_date}}</li>
+        </ul>
+    </div>
+        
+      
 </div>

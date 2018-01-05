@@ -12,6 +12,7 @@ import { environment } from '../../environments/environment';
 export class OrderComponent implements OnInit {
 
   orders: any;
+  
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
@@ -19,6 +20,7 @@ export class OrderComponent implements OnInit {
       // Read the result field from the JSON response.
       console.log(data);
       this.orders = data;
+      
     });
   }
 
