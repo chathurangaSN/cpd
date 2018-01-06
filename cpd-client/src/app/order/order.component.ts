@@ -12,8 +12,9 @@ import { CookieService } from 'ngx-cookie';
 
 export class OrderComponent implements OnInit {
   loggedUserData: any;
-
+total:number;
   orders: any;
+  orderss:any = [];
   
   constructor(    
     private cookieService: CookieService,
@@ -33,6 +34,12 @@ export class OrderComponent implements OnInit {
       // Read the result field from the JSON response.
       console.log(data);
       this.orders = data;
+
+this.total=0;
+      this.orderss.forEach(item => {
+        console.log(item);
+        this.total = this.total + item.orderItems.product.unitPrize * item.orderItems.quntity;
+      });
       
     });
   }

@@ -2,13 +2,14 @@
   <div class="col-3">
     <div class="text-center">
       <div class="img img-circle">
+        
         <img src="../../assets/images/my.jpg" class="profileImage" alt="this is 200*200 image">
       </div>
       <h1>{{loggedUserData.user.firstName}} {{loggedUserData.user.lastName}}</h1>
-      <form>
+      <form >
         <div class="form-group">
-          <label for="exampleFormControlFile1">Example file input</label>
-          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+          <input type="file" enctype="multipart/form-data">
+          <input class="btn-success btn-lg btn-block" type="submit" name="Submit">
         </div>
       </form>
 

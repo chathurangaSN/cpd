@@ -17,10 +17,10 @@ module.exports.getOrderByUserId = function(userId, callback){
     Order.find({'userId' : userId},callback);
 }
 
-module.exports.getOrderByID = function(userId,callback){
-  console.log('Controller get order  by userId method called');
-  Order.findById(userId,callback);
-}
+// module.exports.getOrderByID = function(userId,callback){
+//   console.log('Controller get order  by userId method called');
+//   Order.findById(userId,callback);
+// }
 
 
 // save order

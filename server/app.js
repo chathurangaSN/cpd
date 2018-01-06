@@ -4,6 +4,10 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var router = require('./router');
 
+//to upload file
+var multer  = require('multer');
+var upload = multer({ dest: 'uploads/' });
+
 //this is for connect frontend and backend
 var cors = require('cors');
 

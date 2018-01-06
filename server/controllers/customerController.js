@@ -36,11 +36,11 @@ module.exports.deleteCustomer = function(obj, callback){
     })
 }
 
-module.exports.getCustomerByName = function(obj, callback){
-    console.log('Controller getCustomerName method called');
-    // Customer....(obj._id, function (err, doc) {
-    //     if (err) {
-    //     }
-    //     doc.remove(callback); //Removes the document
-    // })
-}
+// module.exports.getCustomerByName = function(obj, callback){
+//     console.log('Controller getCustomerName method called');
+//     Customer....(obj._id, function (err, doc) {
+//         if (err) {
+//         }
+//         doc.remove(callback); //Removes the document
+//     })
+// }

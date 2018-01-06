@@ -11,6 +11,10 @@ var orderSchema = mongoose.Schema({
         type:Array,
         required:true
     },
+    stage:{
+        type:Number,
+
+    },
     
     create_date:{
         type:Date,

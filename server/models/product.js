@@ -4,6 +4,7 @@ var productSchema = mongoose.Schema({
     productName:{
         type:String,
         required:true
+        
     },
     quantity:{
         type:Number
