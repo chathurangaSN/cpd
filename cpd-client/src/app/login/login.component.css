@@ -19,14 +19,18 @@
 }
 .account-walls
 {
-    border:outset;
-   border-color: rgb(136, 192, 238);
+    border-color: rgb(136, 192, 238);
     align-items: center;
-    margin-left: 464px;
-    margin-right: -453px;
-    margin-top: 10px;
-    background-color: rgb(15, 155, 190);
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #aeaeae;
  
+}
+.account-walls .text-center{
+    font-size: 22px;
+    color: #fff;
+    line-height: 46px;
 }
 .profile-img
 {

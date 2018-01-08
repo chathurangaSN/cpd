@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-my-profile',
@@ -12,13 +13,16 @@ import { Router } from '@angular/router';
 export class MyProfileComponent implements OnInit {
   isLoginSuccess: boolean;
   isRegFormSubmited: boolean;
-
   loggedUserData: any;
   isUserLogged: boolean;
+
+  fileToUpload: File = null;
+
   constructor(
     private http: HttpClient,
     private cookieService: CookieService,
     private router: Router
+
   ) { }
 
   ngOnInit() {
@@ -30,24 +34,33 @@ export class MyProfileComponent implements OnInit {
 
     }
   }
-  // onSubmit(form: any) {
-  //   this.isRegFormSubmited = true;
-  //   console.log(form.files);
-  //   if (form.valid) {
-  //     return this.http.post(
-  //       environment.apiURL + '/profile',
-  //       form.files,
-  //       { headers: new HttpHeaders().set('Content-Type', 'application/json') }
-  //     )
-  //       .subscribe(
-  //       res => {
-  //         console.log(res);
-  //       },
-  //       err => {
-  //         console.log(err);
 
-  //       });
-  //   }
+  handleFileInput(files: FileList) {
+    this.fileToUpload = files.item(0);
+  }
+  
+  
 
-  // }
+  uploadFile(){
+    const formData: FormData = new FormData();
+    formData.append('image', this.fileToUpload, 'mypic');
+    return this.http.post(
+      environment.apiURL + '/uploads',
+      formData
+    )
+      .subscribe(
+      res => {
+        console.log(res);
+        console.log(formData.getAll)
+
+      },
+      err => {
+        console.log(err);
+
+      });
+  }
+  
+
+
+ 
 }

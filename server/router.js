@@ -1,11 +1,13 @@
 //dependencies
 var express = require('express');
 var router = express.Router();
+var multer = require('multer');
 const customerController = require('./controllers/customerController');
 const userController = require('./controllers/userController');
 const productController = require('./controllers/productController');
 const commentController = require('./controllers/commentController');
 const orderController = require('./controllers/orderController');
+var upload = multer({ dest: 'uploads/' });
 
 //hello world
 router.get('/', (req, res) => res.send('Wel come to CPD System'))
@@ -311,10 +313,25 @@ router.delete('/api/order', function (req, res) {
 //         }
 //         res.send(result);
 //     });
-// router.post('/api/profile', upload.any(), function (req, res) {
+
+// router.post('/uploads', upload.any(), function (req, res) {
 //     console.log('this is profile routing')
 //     res.send(req.files);
 // });
+
+/*upload photo */
+router.post('/api/uploads', upload.single(), function(req, res, next) {
+    console.log(req.body, 'Body');
+    console.log('file is uploaded')
+    console.log(req.files, 'files');
+    res.end();
+  });
+
+
+// app.post("/api/uploads", upload.array("uploads[]", 12), function (req, res) {
+//     console.log('files', req.files);
+//     res.send(req.files);
+//   });
 
 // router.get('/api/profile', upload.any(), function (req, res) {
 //     console.log('this is profile routing')

@@ -30,5 +30,8 @@ export class AdminProductNewComponent implements OnInit {
       }
       )
   }
+  newIngredient(){
+    
+  }
 
 }

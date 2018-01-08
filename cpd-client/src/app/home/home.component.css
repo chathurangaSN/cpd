@@ -1,0 +1,34 @@
+.my-2{margin: 20px 0px !important;}
+.mr-1{margin-right: 10px;}
+.w-75 {width: 75%;}
+.w-25 {width: 25%;}
+
+.grow { width: 100%; opacity: 0.8; padding: 15px; margin: 0px; color: #fff; border-radius: 5px;  overflow: hidden; transition: all .2s ease-in-out;  }
+.grow:hover { transform: scale(1.1); }
+
+.img-main-bg{
+    background-image: url("../../assets/images/biscuit-2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+
+    min-height: 565px;
+
+}
+
+.box-1{
+    background-color: #045079; 
+}
+
+.box-2{
+    background-color: #0bc048; 
+}
+
+.box-3{
+    background-color: #0b9b77; 
+}
+
+.box-4{
+    color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-weight:  600;
+}
