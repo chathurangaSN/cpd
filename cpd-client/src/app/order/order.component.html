@@ -22,12 +22,12 @@
             <td style="text-align:right"><div  *ngFor="let item of order.orderItems">{{item.quntity}} </div></td>
             <td><div style="text-align:right"  *ngFor="let item of order.orderItems">{{item.product.unitPrize*item.quntity|number:'1.2-2'}}</div></td>
             <td style="text-align:center">
-                <select class="custom-select" id="inputGroupSelect02" disabled>
-                    <option selected>pending...</option>
-                    <option value="1">Approved</option>
-                    <option value="2">Production</option>
-                    <option value="3">Delivery</option>
-                    <option value="4">Finished</option>
+                <select class="custom-select" id="inputGroupSelect02" [value]="order.state" (change)="order.state = selectElem.value;"  #selectElem disabled>
+                    <option [value]="0" selected>pending...</option>
+                    <option [value]="1">Approved</option>
+                    <option [value]="2">Production</option>
+                    <option [value]="3">Delivery</option>
+                    <option [value]="4">Finished</option>
                 </select>
             </td>
 

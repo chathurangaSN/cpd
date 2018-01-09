@@ -4,7 +4,7 @@ Product = require('../models/product');
 // get product
 module.exports.getProduct = function(callback){
     console.log('Controller get method called');
-    Product.find({},callback);
+    Product.find({}).sort({'_id': -1}).exec(callback);
 }
 
 // get product

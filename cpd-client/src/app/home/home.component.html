@@ -1,5 +1,5 @@
 <p> </p>
-<div class="container-fluid">
+<div class="container-fluid"  (click)="onClick()">
   <div class="row img-main-bg">
     <!-- <div class="col-md-3">
       <form class="form-inline my-lg-0">
@@ -47,20 +47,22 @@
 
         <div class="row">
         <div class="col-md-4">
-            <div class="grow box-1">
-                <h4>Company Overview</h4>
-                <p>This is about our company and our services for you </p>
+
+            <div (click)="toOverview()" class="grow box-1">
+             
+                <h4>About Us</h4>
+                <p>This is about our company discription for you </p>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="grow box-2">
+            <div  (click)="toDetails()" class="grow box-2">
                 <h4>Product Details</h4>
                 <p>This is our company Product details for you</p>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="grow box-3">
-                <h4>Join Us</h4>
+            <div class="grow box-3" (click)="toJoin()">
+                <h4>Join With Us</h4>
                 <p>Please joint with us to reacive delisious service </p>
             </div>
         </div>        
@@ -76,18 +78,18 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <div class="grow box-4">
-                    <h4>Contact Us</h4>
-                    <p>Sachith Chathuranga Nanayakkara. <br>
+                <div class="grow box-4" style="font-family:fantasy">
+                    <h4 style="text-align:right">Contact Us</h4>
+                    <p style="font-family:cursive;text-align:right;">Sachith Chathuranga Nanayakkara<br>
                       Owner<br>
-                      Super Serve <br>
+                      Super Serve<br>
                       Hand made biscuit company<br>
                       Rathna,<br>
-                      Eleboda<br>
+                      Eleboda,<br>
                       Gintota<br>
                       Email:superserver@cpdlk<br>
                       fax:01714565656<br>
-                      Tel:0711460669 <br>
+                      Tel:0711460669<br>
             </div>
             <div class="col-md-1">
                 <div class="box-4">

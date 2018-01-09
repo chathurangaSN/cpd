@@ -11,9 +11,9 @@ var orderSchema = mongoose.Schema({
         type:Array,
         required:true
     },
-    stage:{
+    state:{
         type:Number,
-
+        default: 0
     },
     
     create_date:{

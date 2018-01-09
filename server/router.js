@@ -288,7 +288,7 @@ router.put('/api/order', function (req, res) {
             res.send(err);
         }
         //res.send(result);
-        res.send('the order is updated');
+        res.send(result);
     });
 
 });

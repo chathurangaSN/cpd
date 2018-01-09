@@ -30,6 +30,7 @@ import { CustomerDetailComponent } from './customer-detail/customer-detail.compo
 import { AdminProductNewComponent } from './admin-product-new/admin-product-new.component';
 import { AppCommonService } from './app-common.service';
 import { CartComponent } from './cart/cart.component';
+import { FilterPipe } from './filter.pipe';
 
 
 
@@ -57,6 +58,7 @@ import { CartComponent } from './cart/cart.component';
     CustomerDetailComponent,
     AdminProductNewComponent,
     CartComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -66,9 +68,12 @@ import { CartComponent } from './cart/cart.component';
     HttpClientModule,
     CookieModule.forRoot(),
     AngularFontAwesomeModule
+   
   ],
   providers: [
     AppCommonService
+    
+
   ],
   bootstrap: [AppComponent]
 })

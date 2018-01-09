@@ -9,7 +9,7 @@ module.exports.getOrder = function(callback){
     console.log('Controller get method called');
     Order.find({}).populate({
       path:  'userId',			
-      model: 'User' }).exec(callback);
+      model: 'User' }).sort({'_id': -1}).exec(callback);
 }
 
 module.exports.getOrderByUserId = function(userId, callback){
@@ -34,23 +34,15 @@ module.exports.saveOrder = function(obj, callback){
     });
     order.save(callback);
 }
-// module.exports.updateOrder = function(obj, callback){
-//     console.log('Controller update method called');
-//     var query = {'_id':obj._id};
-//     var newData = {
-//         'orderID' : obj.orderID,
-//         'orderName': obj.orderName,
-//         'quantity':obj.quantity,
-//         'quality':obj.quality,
-//         'unitPrize':obj.unitPrize,
-//         'ingredient':obj.ingredient,
-//         'orderType':obj.orderType,
-//         'commentID':obj.commentID,
-//         'productID':obj.productID,
-//         'userID':obj.userID
-//     };
-//     Order.findOneAndUpdate(query, newData, {upsert:true},callback);
-// }
+
+module.exports.updateOrder = function(obj, callback){
+    console.log('Controller update method called');
+    var query = {'_id':obj._id};
+    var newData = {
+        'state' : obj.state
+    };
+    Order.findOneAndUpdate(query, newData, {upsert:true},callback);
+}
 
 // module.exports.deleteOrder = function(obj, callback){
 //     console.log('Controller delete method called');

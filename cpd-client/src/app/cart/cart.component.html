@@ -1,8 +1,9 @@
-<div *ngIf="isOderSuccess">
- hei your Order successfully done.
-</div>
 
-<div *ngIf="!isOderSuccess">
+<div *ngIf="isOderSuccess" class="alert alert-success" role="alert">
+    your Order successfully done.
+  </div>
+
+<div >
 
 
   <div class="container">
@@ -50,6 +51,6 @@
       Total Price =
       <span class="total">Rs: {{total |number : '1.2-2'}}</span>
     </div>
-    <button (click)="placeOrder()" type="button" class="btn btn-primary">Place Order</button>
+    <button *ngIf="!isOderSuccess" (click)="placeOrder()" type="button" class="btn btn-primary">Place Order</button>
   </div>
 </div>

@@ -29,6 +29,7 @@ var productSchema = mongoose.Schema({
         type:Date,
         default:Date.now
     }
+
 });
 var Product = mongoose.model('Product', productSchema);
 

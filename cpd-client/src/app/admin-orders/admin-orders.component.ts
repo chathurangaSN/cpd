@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class AdminOrdersComponent implements OnInit {
   orders: any;
 
   constructor(
-    private http: HttpClient, 
+    private http: HttpClient,
     private router: Router
   ) { }
 
@@ -21,8 +21,22 @@ export class AdminOrdersComponent implements OnInit {
       // Read the result field from the JSON response.
       console.log(data);
       this.orders = data;
-      
+
     });
+  }
+
+  saveOrderState(item) {
+    console.log(item);
+    this.http.put(
+      environment.apiURL + '/order',
+      item,
+      { headers: new HttpHeaders().set('Content-Type', 'application/json') }).subscribe(data => {
+        // Read the result field from the JSON response.
+        console.log(data);
+        
+
+      });
+
   }
 
 }

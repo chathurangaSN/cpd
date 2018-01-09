@@ -1,0 +1,31 @@
+.para {
+    width: 90%;
+    text-align: justify;
+    font-size: 17px;
+    font-family: Comic Sans MS;
+    display: block;
+    position: relative;
+    margin: auto;
+    line-height: 2;
+    color: #606060;
+    font-weight: 300;
+}
+.company-image {
+    width: 50%;
+    height:300px;
+    position: relative;
+    float: left;
+    display: block;
+    top: 10px;
+    z-index: 3;
+    margin-right: 27px;
+}
+.owner-image {
+    width: 31%;
+    position: relative;
+    float: left;
+    display: block;
+    top: 10px;
+    z-index: 3;
+    margin-right: 27px;
+}

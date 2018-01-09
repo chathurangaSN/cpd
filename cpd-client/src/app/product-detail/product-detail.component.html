@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-sm-8">
           <h1>Name:{{product.productName}}</h1>
-          <small>Range name</small>
+          <small>{{product.productType}} range</small>
         </div>
         <div class="col-sm-4">
           <div class="card">
@@ -22,15 +22,12 @@
         </div>
       </div>
       <hr class="bg-danger">
-      <div>
-        <h1>Ingredient details</h1>
+      <h1>Ingredient details</h1>
+      <div *ngFor="let item of product.ingredient">
+        
         <ul>
-          <li>suger</li>
-          <li>custed</li>
-          <li>vanila</li>
-          <li>plums</li>
-          <li>alchol</li>
-          <li>wine</li>
+          <li>{{item.value}}</li>
+
         </ul>
       </div>
       <hr class="bg-danger">
