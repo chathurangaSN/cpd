@@ -1,8 +1,10 @@
 //dependencies
+var path = require('path');
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var router = require('./router');
+
 
 //to upload file
 var multer  = require('multer');
@@ -13,6 +15,8 @@ var cors = require('cors');
 
 
 var app = express();
+
+
 app.use(cors());
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -40,5 +44,8 @@ mongoose.connect('mongodb://localhost:27017/cpdsystemdb', function (err) {
 });
 
 app.use(router);
+
+var dir = path.join(__dirname, 'uploads');
+app.use(express.static(dir));
 
 app.listen(3000, () => console.log('CPDsystem app is listening on port 3000!'))

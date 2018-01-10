@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AppCommonService } from './app-common.service';
 import { CookieService } from 'ngx-cookie';
 import { Router } from '@angular/router';
+import { FilterPipe } from './filter.pipe';
 
 @Component({
   selector: 'app-root',

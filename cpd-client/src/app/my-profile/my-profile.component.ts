@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import { FilterPipe } from '../filter.pipe';
 
 @Component({
   selector: 'app-my-profile',
@@ -17,7 +18,7 @@ export class MyProfileComponent implements OnInit {
   isUserLogged: boolean;
 
   fileToUpload: File = null;
-
+  imageServerUrl: string;
   constructor(
     private http: HttpClient,
     private cookieService: CookieService,
@@ -26,7 +27,7 @@ export class MyProfileComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+    this.imageServerUrl = environment.imagesURL;
 
     if (this.cookieService.getObject('loginData')) {
       this.loggedUserData = this.cookieService.getObject('loginData');
@@ -38,10 +39,10 @@ export class MyProfileComponent implements OnInit {
   handleFileInput(files: FileList) {
     this.fileToUpload = files.item(0);
   }
-  
-  
 
-  uploadFile(){
+
+
+  uploadFile() {
     const formData: FormData = new FormData();
     formData.append('image', this.fileToUpload, 'mypic');
     return this.http.post(
@@ -59,8 +60,8 @@ export class MyProfileComponent implements OnInit {
 
       });
   }
-  
 
 
- 
+
+
 }

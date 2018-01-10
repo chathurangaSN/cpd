@@ -29,5 +29,20 @@ export class AdminProductsComponent implements OnInit {
   addNewProduct() {
     this.router.navigate(['admin/product-new']);
   }
+  delete(product){
+    this.http.request(
+      'delete',
+      environment.apiURL + '/product',
+      { body: product })
+      .subscribe(
+      data => {
+        this.http.get(environment.apiURL + '/product').subscribe(data => {
+          // Read the result field from the JSON response.
+          console.log(data);
+          this.products = data;
+        });
+      });
+      window.location.reload();
+  }
 
 }

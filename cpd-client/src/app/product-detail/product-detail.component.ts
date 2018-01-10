@@ -18,13 +18,18 @@ export class ProductDetailComponent implements OnInit {
   product?: any;
   quntity: number;
   cartItems: any = [];
+  isLoginSuccess:boolean;
 
   constructor(
     private http: HttpClient,
     private cookieService: CookieService,
     private activatedRoute: ActivatedRoute,
     private appCommonService: AppCommonService,
-    private router: Router) { }
+    private router: Router) {
+      if (cookieService.getObject('loginData')) {
+        this.isLoginSuccess = true;
+      }
+     }
 
   ngOnInit() {
     this.quntity = 1;
@@ -47,6 +52,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addToCart(product, quntity) {
+    this.router.navigate(['cart']);
     console.log(product);
     console.log(quntity);
     this.cartItems.push({
@@ -54,6 +60,7 @@ export class ProductDetailComponent implements OnInit {
       quntity: quntity
     });
     this.appCommonService.CartItems = this.cartItems;
+
   }
 
 }

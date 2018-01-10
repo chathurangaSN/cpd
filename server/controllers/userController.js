@@ -102,12 +102,15 @@ module.exports.updateUser = function (obj, callback) {
 module.exports.deleteUser = function (obj, callback) {
     console.log('Controller delete method called');
 
+
     User.findById(obj._id, function (err, doc) {
         if (err) {
         }
         doc.remove(callback); //Removes the document
     })
 }
+
+  
 
 module.exports.getUserByName = function (obj, callback) {
     console.log('Controller getUserName method called');

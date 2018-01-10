@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
+  imagesURL: 'http://localhost:3000/',
   apiURL: 'http://localhost:3000/api'
 };

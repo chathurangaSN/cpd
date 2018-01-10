@@ -2,7 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var multer = require('multer');
-const customerController = require('./controllers/customerController');
+// const customerController = require('./controllers/customerController');
 const userController = require('./controllers/userController');
 const productController = require('./controllers/productController');
 const commentController = require('./controllers/commentController');
@@ -15,51 +15,51 @@ router.get('/', (req, res) => res.send('Wel come to CPD System'))
 //customer routings
 
 //customer get request
-router.get('/api/customer', function (req, res) {
-    customerController.getCustomer(function (err, customer) {
-        console.log(err);
-        console.log(customer);
-        if (err) {
-            res.send(err);
-        }
-        res.send(customer)
-    });
+// router.get('/api/customer', function (req, res) {
+//     customerController.getCustomer(function (err, customer) {
+//         console.log(err);
+//         console.log(customer);
+//         if (err) {
+//             res.send(err);
+//         }
+//         res.send(customer)
+//     });
 
-});
+// });
 //customer post request
-router.post('/api/customer', function (req, res) {
-    console.log(req.body);
-    customerController.saveCustomer(req.body, function (err, result) {
-        console.log(err);
-        console.log(result);
-        if (err) {
-            res.send(err);
-        }
-        res.send(result);
-    });
+// router.post('/api/customer', function (req, res) {
+//     console.log(req.body);
+//     customerController.saveCustomer(req.body, function (err, result) {
+//         console.log(err);
+//         console.log(result);
+//         if (err) {
+//             res.send(err);
+//         }
+//         res.send(result);
+//     });
 
-});
+// });
 
 //customer put request
-router.put('/api/customer', function (req, res) {
-    customerController.updateCustomer(req.body, function (err, result) {
-        if (err) {
-            res.send(err);
-        }
-        //res.send(result);
-        res.send('the data is updated');
-    });
+// router.put('/api/customer', function (req, res) {
+//     customerController.updateCustomer(req.body, function (err, result) {
+//         if (err) {
+//             res.send(err);
+//         }
+//         //res.send(result);
+//         res.send('the data is updated');
+//     });
 
-});
+// });
 //customer delete request
-router.delete('/api/customer', function (req, res) {
-    customerController.deleteCustomer(req.body, function (err, result) {
-        if (err) {
-            res.send(err);
-        }
-        res.send('the data is deleted');
-    });
-});
+// router.delete('/api/customer', function (req, res) {
+//     customerController.deleteCustomer(req.body, function (err, result) {
+//         if (err) {
+//             res.send(err);
+//         }
+//         res.send('the data is deleted');
+//     });
+// });
 
 //user routings
 
@@ -111,7 +111,7 @@ router.put('/api/user', function (req, res) {
             res.send(err);
         }
         //res.send(result);
-        res.send('the user is updated');
+        res.send(result);
     });
 
 });
@@ -121,24 +121,25 @@ router.delete('/api/user', function (req, res) {
         if (err) {
             res.send(err);
         }
-        res.send('the user is deleted');
+        res.send(res);
     });
 });
+
 
 //product routings
 
 //product get request
 router.get('/api/product', function (req, res) {
-    productController.getProduct(function (err, product) {
-        console.log(err);
-        console.log(product);
-        if (err) {
-            res.send(err);
-        }
-        res.send(product)
-    });
+        productController.getProduct(function (err, product) {
+            console.log(err);
+            console.log(product);
+            if (err) {
+                res.send(err);
+            }
+            res.send(product)
+        });
 
-});
+    });
 
 //product get request by id
 router.get('/api/product/:id', function (req, res) {
@@ -302,30 +303,12 @@ router.delete('/api/order', function (req, res) {
     });
 });
 
-//upload photo
-// router.post('/api/profile', function (req, res) {
-//     console.log(req.body);
-//     orderController.saveOrder(req.body, function (err, result) {
-//         console.log(err);
-//         console.log(result);
-//         if (err) {
-//             res.send(err);
-//         }
-//         res.send(result);
-//     });
 
-// router.post('/uploads', upload.any(), function (req, res) {
-//     console.log('this is profile routing')
-//     res.send(req.files);
-// });
 
 /*upload photo */
-router.post('/api/uploads', upload.single(), function(req, res, next) {
-    console.log(req.body, 'Body');
-    console.log('file is uploaded')
-    console.log(req.files, 'files');
-    res.end();
-  });
+router.post('/api/uploads', upload.any(), function (req, res) {
+    res.send(req.files[0].filename);
+});
 
 
 // app.post("/api/uploads", upload.array("uploads[]", 12), function (req, res) {

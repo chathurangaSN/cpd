@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
-import { FilterPipe } from '../filter.pipe';
+
+import { CookieService } from 'ngx-cookie';
 
 @Component({
   selector: 'app-products',
@@ -11,19 +12,40 @@ import { FilterPipe } from '../filter.pipe';
 })
 
 export class ProductsComponent implements OnInit {
+  sweetCount: any;
+  rangeTitle: string;
   baseProductList: any;
 
   products: any;
   searchText: string;
-  constructor(private http: HttpClient, private router: Router) { }
+  isLoginSuccess: boolean;
+  isSweetRange: boolean;
+  isPuffRange: boolean;
+  isCreamRange: boolean;
+  isCrackerRange: boolean;
+  isSavouryRange: boolean;
+  isGiftRange: boolean;
+  isHealthRange: boolean;
+
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private cookieService: CookieService
+  ) {
+    if (cookieService.getObject('loginData')) {
+      this.isLoginSuccess = true;
+    }
+
+  }
 
   ngOnInit() {
     this.http.get(environment.apiURL + '/product').subscribe(data => {
       // Read the result field from the JSON response.
       console.log(data);
       this.products = data;
+      this.sweetCount = this.products.filter(x=> x.productType.toUpperCase() ==='SWEET').length;
       this.baseProductList = this.products;
-      
+
     });
   }
   post() {
@@ -48,6 +70,7 @@ export class ProductsComponent implements OnInit {
 
   fiterByName(searchText) {
     console.log(searchText);
+    this.rangeTitle = '';
     if (searchText.length > 0) {
       this.products = this.baseProductList.filter(x => x.productName.toLowerCase().startsWith(searchText.toLowerCase()))
     } else {
@@ -55,10 +78,50 @@ export class ProductsComponent implements OnInit {
     }
   }
 
-  filterByType(type){
+  filterByType(type) {
     console.log(type);
     this.products = this.baseProductList.filter(x => x.productType.toLowerCase().startsWith(type.toLowerCase()))
-    
+    switch (type) {
+      case 'SWEET':
+      this.rangeTitle = 'Sweet Range'
+        
+        break;
+      case 'PUFF':
+      this.rangeTitle = 'Puff Range'
+      
+        break;
+      case 'CREAM':
+      this.rangeTitle = 'Cream Range'
+      
+        break;
+      case 'CRACKER':
+      this.rangeTitle = 'Cracker Range'
+      
+        break;
+      case 'SAVOURY':
+      this.rangeTitle = 'Savoury Range'
+      
+        break;
+      case 'GIFT':
+      this.rangeTitle = 'Gift Range'
+      
+        break;
+      case 'HEALTH':
+      this.rangeTitle = 'Health Range'
+      
+        break;
+
+      default:
+        this.isSweetRange = false;
+        this.isPuffRange = false;
+        this.isCreamRange = false;
+        this.isCrackerRange = false;
+        this.isSavouryRange = false;
+        this.isGiftRange = false;
+        this.isHealthRange = false;
+
+        break;
+    }
   }
 
 

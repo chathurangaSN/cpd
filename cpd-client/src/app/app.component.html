@@ -3,7 +3,7 @@
 </div>
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary ">
-  <a class="navbar-brand" href="#">CPD</a>
+  <a class="navbar-brand" routerLink="/home" routerLinkActive="active">CPD</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="btn btn-primary my-2 my-sm-0 mr-3" *ngIf="isLoginSuccess" routerLink="/me" routerLinkActive="active">My profile</a>
+        <a class="btn btn-primary my-2 my-sm-0 mr-3" *ngIf="isLoginSuccess" routerLink="/me" routerLinkActive="active"><img src="../../assets/images/my.jpg"style="width:25px;height:25px;border-radius: 50%;">{{loggedUserData.user.firstName|filter:true}} {{loggedUserData.user.lastName|filter:true}}</a>
       </li>
 
     </ul>

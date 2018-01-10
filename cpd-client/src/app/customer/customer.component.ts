@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-customer',
@@ -10,31 +11,50 @@ import { Router } from '@angular/router';
 })
 export class CustomerComponent implements OnInit {
 
-  customers:any;
-  constructor(private http: HttpClient, private router: Router ) { }
+  customers: any;
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     this.http.get(environment.apiURL + '/user').subscribe(data => {
       // Read the result field from the JSON response.
-     console.log(data);
-     this.customers = data;
+      console.log(data);
+      this.customers = data;
     });
   }
-  post(){
-    
+  post() {
+
   }
 
-  editDetail(user){
-    this.router.navigate(['register/'+ user._id]);
+  editDetail(user) {
+    this.router.navigate(['register/' + user._id]);
   }
-  showDetail(user){
-    this.router.navigate(['customer/detail/'+ user._id]);
+  showDetail(user) {
+    this.router.navigate(['customer/detail/' + user._id]);
   }
-  delete(){
-    this.router.navigate(['home']);
+  delete(user) {
+
+    this.http.request(
+      'delete',
+      environment.apiURL + '/user',
+      { body: user })
+      .subscribe(
+      data => {
+        this.http.get(environment.apiURL + '/user').subscribe(data => {
+          // Read the result field from the JSON response.
+          console.log(data);
+          this.customers = data;
+
+        });
+
+      });
+      window.location.reload();
+
+
   }
 
 }
+
+
 
 
 
