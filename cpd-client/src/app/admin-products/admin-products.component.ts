@@ -36,13 +36,15 @@ export class AdminProductsComponent implements OnInit {
       { body: product })
       .subscribe(
       data => {
+        console.log(data);
+        console.log('----------------------');
         this.http.get(environment.apiURL + '/product').subscribe(data => {
           // Read the result field from the JSON response.
           console.log(data);
           this.products = data;
         });
       });
-      window.location.reload();
+      // window.location.reload();
   }
 
 }

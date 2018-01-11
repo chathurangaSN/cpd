@@ -28,7 +28,7 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     this.isUserLogged = false;
     this.isOderSuccess = false;
-    
+
     this.total = 0;
     console.log(this.cookieService.getObject('cartItems'));
     if (this.cookieService.getObject('cartItems')) {
@@ -66,7 +66,7 @@ export class CartComponent implements OnInit {
           this.cookieService.remove('cartItems');
           this.appCommonService.CartItems = [];
           this.isOderSuccess = true;
-         },
+        },
         err => { }
         );
     } else {
@@ -75,5 +75,24 @@ export class CartComponent implements OnInit {
 
 
   }
+  delete(cartItems) {
+
+    this.http.request(
+      'delete',
+      environment.apiURL + '/order',
+      { body:cartItems })
+      .subscribe(
+      data => {
+        console.log(data);
+        console.log('----------------------');
+        this.http.get(environment.apiURL + '/order').subscribe(data => {
+          // Read the result field from the JSON response.
+          console.log(data);
+          this.cartItems = data;
+        });
+      });
+    // window.location.reload();
+  }
+
 
 }

@@ -3,7 +3,7 @@
     <div class="text-center">
       <div class="img img-circle">
         
-        <img src="{{imageServerUrl}}af730e26f3105ad8acf0af1ba3c296d6" class="profileImage" alt="this is 200*200 image">
+        <img src="{{imageServerUrl}}079faa2478eac62c16e4f6dc327bfdbc" class="profileImage" alt="this is 200*200 image">
       </div>
       <h1>{{loggedUserData.user.firstName|filter:true}} {{loggedUserData.user.lastName|filter:true}}</h1>
       <form >
@@ -34,7 +34,7 @@
               <label for="colFormLabel" class="col-sm-2 col-form-label">firstName:</label>
             </div>
             <div class="col-sm-8">
-              <input type="email" class="form-control" id="colFormLabel" placeholder="{{loggedUserData.user.firstName}}" disabled>
+              <input type="email" class="form-control" id="colFormLabel" placeholder="{{loggedUserData.user.firstName|filter:true}}" disabled>
             </div>
         </div>
 
@@ -43,7 +43,7 @@
               <label for="colFormLabel" class="col-sm-2 col-form-label">lastName:</label>
             </div>
             <div class="col-sm-8">
-              <input type="email" class="form-control" id="colFormLabel" placeholder="{{loggedUserData.user.lastName}}" disabled>
+              <input type="email" class="form-control" id="colFormLabel" placeholder="{{loggedUserData.user.lastName|filter:true}}" disabled>
             </div>
         </div>
 

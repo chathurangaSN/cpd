@@ -102,7 +102,7 @@ module.exports.updateUser = function (obj, callback) {
 module.exports.deleteUser = function (obj, callback) {
     console.log('Controller delete method called');
 
-
+ 
     User.findById(obj._id, function (err, doc) {
         if (err) {
         }
@@ -119,4 +119,13 @@ module.exports.getUserByName = function (obj, callback) {
     //     }
     //     doc.remove(callback); //Removes the document
     // })
+}
+
+module.exports.updateUserImage = function(obj, callback){
+    console.log('Controller update method called');
+    var query = {'_id':obj._id};
+    var newData = {
+        'profileImage' : obj.profileImage
+    };
+    Order.findOneAndUpdate(query, newData, {upsert:true},callback);
 }

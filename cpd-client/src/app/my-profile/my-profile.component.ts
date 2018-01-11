@@ -44,15 +44,18 @@ export class MyProfileComponent implements OnInit {
 
   uploadFile() {
     const formData: FormData = new FormData();
+
     formData.append('image', this.fileToUpload, 'mypic');
+    
     return this.http.post(
       environment.apiURL + '/uploads',
       formData
     )
       .subscribe(
+
       res => {
         console.log(res);
-        console.log(formData.getAll)
+        console.log(formData.getAll);
 
       },
       err => {

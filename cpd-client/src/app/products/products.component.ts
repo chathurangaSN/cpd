@@ -12,6 +12,12 @@ import { CookieService } from 'ngx-cookie';
 })
 
 export class ProductsComponent implements OnInit {
+  healthCount: any;
+  giftCount: any;
+  savouryCount: any;
+  crackerCount: any;
+  creamCount: any;
+  puffCount: any;
   sweetCount: any;
   rangeTitle: string;
   baseProductList: any;
@@ -44,6 +50,13 @@ export class ProductsComponent implements OnInit {
       console.log(data);
       this.products = data;
       this.sweetCount = this.products.filter(x=> x.productType.toUpperCase() ==='SWEET').length;
+      this.puffCount = this.products.filter(x=> x.productType.toUpperCase() ==='PUFF').length;
+      this.creamCount = this.products.filter(x=> x.productType.toUpperCase() ==='CREAM').length;
+      this.crackerCount = this.products.filter(x=> x.productType.toUpperCase() ==='CRACKER').length;
+      this.savouryCount = this.products.filter(x=> x.productType.toUpperCase() ==='SAVOURY').length;
+      this.giftCount = this.products.filter(x=> x.productType.toUpperCase() ==='GIFT').length;
+      this.healthCount = this.products.filter(x=> x.productType.toUpperCase() ==='HEALTH').length;
+      
       this.baseProductList = this.products;
 
     });

@@ -42,7 +42,7 @@
         <td>{{item.quntity}}</td>
         <td style="text-align:right">Rs:{{item.product.unitPrize*item.quntity |number : '1.2-2'}}</td>
         <td style="text-align:right">
-          <button class="btn btn-primary" style="height:28px;text-align:center; padding: 0rem 0rem;">Delete</button>
+          <button class="btn btn-primary" style="height:28px;text-align:center; padding: 0rem 0rem;" (click)="delete(cartItems)">Delete</button>
         </td>
       </tr>
 

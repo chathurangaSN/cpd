@@ -44,15 +44,19 @@ module.exports.updateOrder = function(obj, callback){
     Order.findOneAndUpdate(query, newData, {upsert:true},callback);
 }
 
-// module.exports.deleteOrder = function(obj, callback){
-//     console.log('Controller delete method called');
 
-//     Order.findById(obj._id, function (err, doc) {
-//         if (err) {
-//         }
-//         doc.remove(callback); //Removes the document
-//     })
-// }
+
+
+
+module.exports.deleteOrder = function(obj, callback){
+    console.log('Controller delete method called');
+
+    Order.findById(obj._id, function (err, doc) {
+        if (err) {
+        }
+        doc.remove(callback); //Removes the document
+    })
+}
 
 // module.exports.getOrderByName = function(obj, callback){
 //     console.log('Controller getOrderName method called');

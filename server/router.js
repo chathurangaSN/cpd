@@ -61,6 +61,7 @@ router.get('/', (req, res) => res.send('Wel come to CPD System'))
 //     });
 // });
 
+/*-------------------------------------------------------- */
 //user routings
 
 //user login
@@ -121,11 +122,11 @@ router.delete('/api/user', function (req, res) {
         if (err) {
             res.send(err);
         }
-        res.send(res);
+        res.send(result);
     });
 });
 
-
+/*-------------------------------------------------------- */
 //product routings
 
 //product get request
@@ -186,10 +187,11 @@ router.delete('/api/product', function (req, res) {
         if (err) {
             res.send(err);
         }
-        res.send('the product is deleted');
+        res.send(result);
     });
 });
 
+/*-------------------------------------------------------- */
 //comment routings
 
 //comment get request
@@ -239,6 +241,7 @@ router.delete('/api/comment', function (req, res) {
     });
 });
 
+/*-------------------------------------------------------- */
 //order routings
 
 //order get request
@@ -299,16 +302,19 @@ router.delete('/api/order', function (req, res) {
         if (err) {
             res.send(err);
         }
-        res.send('the order is deleted');
+        res.send(result);
     });
 });
 
-
+/*-------------------------------------------------------- */
 
 /*upload photo */
 router.post('/api/uploads', upload.any(), function (req, res) {
     res.send(req.files[0].filename);
 });
+
+
+
 
 
 // app.post("/api/uploads", upload.array("uploads[]", 12), function (req, res) {

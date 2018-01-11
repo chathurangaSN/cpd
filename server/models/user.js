@@ -45,6 +45,9 @@ var userSchema = mongoose.Schema({
         type: String,
 
     },
+    profileImage:{
+        type: String
+    },
     orderID: {
         type: String,
     },

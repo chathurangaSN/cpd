@@ -4,37 +4,37 @@
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control w-75" type="search" ngModel name="searchText" #searchText="ngModel" placeholder="Search by Name"
         aria-label="Search">
-      <button (click)="fiterByName(searchText.value)" class="btn btn-primary w-25" type="submit">Search</button>
+      <button (click)="fiterByName(searchText.value)" class="btn btn-info w-25" type="submit">Search</button>
     </form>
 
     <ul class="list-group">
       <li (click)="filterByType('SWEET')" class="list-group-item d-flex justify-content-between align-items-center">
         Sweet Range
-        <span class="badge badge-primary badge-pill">{{sweetCount}}</span>
+        <span class="badge badge-danger badge-pill">{{sweetCount}}</span>
       </li>
       <li (click)="filterByType('PUFF')" class="list-group-item d-flex justify-content-between align-items-center">
         Puff Range
-        <span class="badge badge-primary badge-pill">3</span>
+        <span class="badge badge-danger badge-pill">{{puffCount}}</span>
       </li>
       <li (click)="filterByType('CREAM')" class="list-group-item d-flex justify-content-between align-items-center">
         Cream Range
-        <span class="badge badge-primary badge-pill">3</span>
+        <span class="badge badge-danger badge-pill">{{creamCount}}</span>
       </li>
       <li (click)="filterByType('CRACKER')" class="list-group-item d-flex justify-content-between align-items-center">
         Cracker Range
-        <span class="badge badge-primary badge-pill">3</span>
+        <span class="badge badge-danger badge-pill">{{crackerCount}}</span>
       </li>
       <li (click)="filterByType('SAVOURY')" class="list-group-item d-flex justify-content-between align-items-center">
         Savoury Range
-        <span class="badge badge-primary badge-pill">3</span>
+        <span class="badge badge-danger badge-pill">{{savouryCount}}</span>
       </li>
       <li (click)="filterByType('GIFT')" class="list-group-item d-flex justify-content-between align-items-center">
         Gift Range
-        <span class="badge badge-primary badge-pill">3</span>
+        <span class="badge badge-danger badge-pill">{{giftCount}}</span>
       </li>
       <li (click)="filterByType('HEALTH')" class="list-group-item d-flex justify-content-between align-items-center">
         Health & Wellness Range
-        <span class="badge badge-primary badge-pill">3</span>
+        <span class="badge badge-danger badge-pill">{{healthCount}}</span>
       </li>
     </ul>
   </div>
@@ -49,12 +49,12 @@
         <div class="card">
           <img class="card-img-top" src="../../assets/images/biscuit (7).jpg" alt="Card image cap">
           <div class="card-body">
-            <h4 class="card-title text-primary">{{product.productName}}</h4>
+            <h4 class="card-title text-primary">{{product.productName|filter:true}}</h4>
             <p class="card-text">
-              <small class="text-muted">this is in brief about {{product.productName}} and if you want to see more detail please click below link</small>
+              <small class="text-dark">this is in brief about {{product.productName}} and if you want to see more detail please click below link</small>
             </p>
             <a>
-              <button class="btn btn-primary" (click)="showDetail(product)">+See More</button>
+              <button class="btn btn-info" (click)="showDetail(product)">+See More</button>
             </a>
           </div>
         </div>

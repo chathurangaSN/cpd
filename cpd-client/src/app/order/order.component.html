@@ -1,34 +1,36 @@
 
 <div class="container-fluid">
-    <h1>Order list</h1>
+    <h1>My Orders list</h1>
     <table class="table">
 
-        <tr class="thead-dark">
-            <th>Date</th>
-            <th>Product</th>
-            <th>unit price</th>
-            <th>Quantiy </th>
-            <th>Order Price</th>
-            <th>Stage</th>
+        <tr class="thead-dark" >
+            <th style="text-align:center">Date</th>
+            <th style="text-align:center">Product</th>
+            <th style="text-align:center">unit price</th>
+            <th style="text-align:center">Quantiy </th>
+            <th style="text-align:center">Order Price</th>
+            <th style="text-align:center">Stage</th>
             
         </tr>
 
 
-        <tr *ngFor="let order of orders">
-            <td>{{order.create_date}}</td>
-            <td>
+        <tr *ngFor="let order of orders" >
+            <td style="text-align:center">{{order.create_date}}</td>
+            <td style="text-align:center">
                     <div  *ngFor="let item of order.orderItems">{{item.product.productName}}</div>        
             </td>
-            <td><div style="text-align:right" *ngFor="let item of order.orderItems">{{item.product.unitPrize|number:'1.2-2'}} </div></td>
-            <td style="text-align:right"><div  *ngFor="let item of order.orderItems">{{item.quntity}} </div></td>
-            <td><div style="text-align:right"  *ngFor="let item of order.orderItems">{{item.product.unitPrize*item.quntity|number:'1.2-2'}}</div></td>
+            <td style="text-align:center"><div  *ngFor="let item of order.orderItems">{{item.product.unitPrize|number:'1.2-2'}} </div></td>
+            <td style="text-align:center"><div  *ngFor="let item of order.orderItems">{{item.quntity}} </div></td>
+            <td style="text-align:center"><div  *ngFor="let item of order.orderItems">{{item.product.unitPrize*item.quntity|number:'1.2-2'}}</div></td>
+            <!-- <td style="text-align:right"><div>{{order.state}} </div></td> -->
+            
             <td style="text-align:center">
-                <select class="custom-select" id="inputGroupSelect02" [value]="order.state" (change)="order.state = selectElem.value;"  #selectElem disabled>
-                    <option [value]="0" selected>pending...</option>
-                    <option [value]="1">Approved</option>
-                    <option [value]="2">Production</option>
-                    <option [value]="3">Delivery</option>
-                    <option [value]="4">Finished</option>
+                <select class="custom-select text-dark" id="inputGroupSelect02" [value]="order.state"(change)="order.state = selectElem.value;"  #selectElem disabled>
+                    <option class="text-light bg-secondry" [value]="0" selected>pending...</option>
+                    <option class="text-light bg-primary" [value]="1">Approved</option>
+                    <option class="text-light bg-success" [value]="2">Production</option>
+                    <option class="text-light bg-danger" [value]="3">Delivery</option>
+                    <option class="text-light bg-warning" [value]="4">Finished</option>
                 </select>
             </td>
 

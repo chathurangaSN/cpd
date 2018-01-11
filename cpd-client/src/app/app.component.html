@@ -2,7 +2,7 @@
   <h1> w </h1>
 </div>
 
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary ">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-info ">
   <a class="navbar-brand" routerLink="/home" routerLinkActive="active">CPD</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -11,41 +11,44 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/home" routerLinkActive="active">Home </a>
+        <a class="btn btn-info my-2 my-sm-0 mr-3" routerLink="/home" routerLinkActive="active">Home </a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/products" routerLinkActive="active">Products List</a>
+        <a class="btn btn-info my-2 my-sm-0 mr-3" routerLink="/products" routerLinkActive="active">Products List</a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-primary my-2 my-sm-0 mr-3" *ngIf="isDisplayAdminMenu && isLoginSuccess" routerLink="/admin/orders" routerLinkActive="active">Orders</a>
+        <a class="btn btn-info my-2 my-sm-0 mr-3" *ngIf="isDisplayAdminMenu && isLoginSuccess" routerLink="/admin/orders" routerLinkActive="active">Orders</a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-primary my-2 my-sm-0 mr-3" *ngIf="isLoginSuccess" routerLink="/orders" routerLinkActive="active">My Orders</a>
+        <a class="btn btn-info my-2 my-sm-0 mr-3" *ngIf="isLoginSuccess" routerLink="/orders" routerLinkActive="active">My Orders</a>
       </li>
 
       
       <li class="nav-item dropdown" *ngIf="isDisplayAdminMenu && isLoginSuccess">
-        <a class="nav-link dropdown-toggle btn btn-primary my-2 my-sm-0 mr-3"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle btn btn-info my-2 my-sm-0 mr-3"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Admin
         </a>
         <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-          <a class="dropdown-item bg-primary text-danger" routerLink="/admin/products" routerLinkActive="active">Products</a>
-          <a class="dropdown-item bg-success" routerLink="/admin/orders" routerLinkActive="active">Orders</a>
-          <a class="dropdown-item bg-info" routerLink="/customer" routerLinkActive="active">Customers</a>
+
+          <a class="dropdown-item" routerLink="/admin/products" routerLinkActive="active">Products</a>
+          <a class="dropdown-item " routerLink="/admin/orders" routerLinkActive="active">Orders</a>
+          <a class="dropdown-item" routerLink="/customer" routerLinkActive="active">Customers</a>
         </div>
+        
       </li>
 
+
       <li class="nav-item">
-        <a class="btn btn-primary my-2 my-sm-0 mr-3" *ngIf="isLoginSuccess" routerLink="/me" routerLinkActive="active"><img src="../../assets/images/my.jpg"style="width:25px;height:25px;border-radius: 50%;">{{loggedUserData.user.firstName|filter:true}} {{loggedUserData.user.lastName|filter:true}}</a>
+        <a class="btn btn-info my-2 my-sm-0 mr-3" *ngIf="isLoginSuccess" routerLink="/me" routerLinkActive="active"><img src="../../assets/images/my.jpg"style="width:25px;height:25px;border-radius: 50%;">{{loggedUserData.user.firstName|filter:true}} {{loggedUserData.user.lastName|filter:true}}</a>
       </li>
 
     </ul>
-    <a class="btn btn-primary my-2 my-sm-0 mr-3" *ngIf="isLoginSuccess" routerLink="/cart" routerLinkActive="active">
+    <a class="btn btn-info my-2 my-sm-0 mr-3" *ngIf="isLoginSuccess" routerLink="/cart" routerLinkActive="active">
       <i class="fa fa-shopping-cart" aria-hidden="true"></i> {{cartItems?.length}}
     </a>
-    <a *ngIf="!isLoginSuccess" class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/register" routerLinkActive="active">Signup</a>
-    <a *ngIf="!isLoginSuccess" class="btn btn-primary my-2 my-sm-0 mr-3" routerLink="/login" routerLinkActive="active">Login</a>
-    <a *ngIf="isLoginSuccess" class="btn btn-primary my-2 my-sm-0 mr-3" (click)="userLogOut()">Logout</a>
+    <a *ngIf="!isLoginSuccess" class="btn btn-info my-2 my-sm-0 mr-3" routerLink="/register" routerLinkActive="active">Signup</a>
+    <a *ngIf="!isLoginSuccess" class="btn btn-info my-2 my-sm-0 mr-3" routerLink="/login" routerLinkActive="active">Login</a>
+    <a *ngIf="isLoginSuccess" class="btn btn-info my-2 my-sm-0 mr-3" (click)="userLogOut()">Logout</a>
   </div>
 </nav>
 

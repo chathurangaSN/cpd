@@ -7,10 +7,10 @@
 
             <th>Customer Name</th>
             <th>Product</th>
-            <th>unit price</th>
-            <th>Quantiy </th>
-            <th>Order Price</th>
-            <th>Stage</th>
+            <th style="text-align:right">unit price</th>
+            <th style="text-align:right">Quantiy </th>
+            <th style="text-align:right">Order Price</th>
+            <th style="text-align:center">Stage</th>
 
         </tr>
 
@@ -41,7 +41,7 @@
                     <option [value]="3">Delivery</option>
                     <option [value]="4">Finished</option>
                 </select>
-                <button (click)="saveOrderState(order)" class="col-auto btn btn-primary">save</button>
+                <button (click)="saveOrderState(order)" class="col-auto btn btn-info">save</button>
             </td>
 
         </tr>
