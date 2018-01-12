@@ -3,6 +3,7 @@ import { AppCommonService } from './app-common.service';
 import { CookieService } from 'ngx-cookie';
 import { Router } from '@angular/router';
 import { FilterPipe } from './filter.pipe';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -15,12 +16,14 @@ export class AppComponent {
   loggedUserData: any;
   isLoginSuccess: boolean;
   isDisplayAdminMenu: boolean;
+  imageServerUrl: string;
   constructor(
     private cookieService: CookieService,
     private router: Router,
     private appCommonService: AppCommonService
   ) {
     this.isDisplayAdminMenu = false;
+    this.imageServerUrl = environment.imagesURL;
 
     //Check user already logged in by using cookies
     if (cookieService.getObject('loginData')) {

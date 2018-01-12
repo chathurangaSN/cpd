@@ -15,10 +15,12 @@ export class MyProfileComponent implements OnInit {
   isLoginSuccess: boolean;
   isRegFormSubmited: boolean;
   loggedUserData: any;
+  uploadRes: any;
   isUserLogged: boolean;
 
   fileToUpload: File = null;
   imageServerUrl: string;
+  image: any;
   constructor(
     private http: HttpClient,
     private cookieService: CookieService,
@@ -45,8 +47,8 @@ export class MyProfileComponent implements OnInit {
   uploadFile() {
     const formData: FormData = new FormData();
 
-    formData.append('image', this.fileToUpload, 'mypic');
-    
+    formData.append('image', this.fileToUpload, this.fileToUpload.name);
+
     return this.http.post(
       environment.apiURL + '/uploads',
       formData
@@ -55,8 +57,19 @@ export class MyProfileComponent implements OnInit {
 
       res => {
         console.log(res);
-        console.log(formData.getAll);
+        
+        this.uploadRes = res
+        this.loggedUserData.user.profileImage = this.uploadRes.profileImage;
+        // update user profile url
+        this.http.put(
+          environment.apiURL + '/user',
+          this.loggedUserData.user
+        )
+          .subscribe(
+          res => {
 
+          }
+          )
       },
       err => {
         console.log(err);

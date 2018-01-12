@@ -39,7 +39,7 @@
 
 
       <li class="nav-item">
-        <a class="btn btn-info my-2 my-sm-0 mr-3" *ngIf="isLoginSuccess" routerLink="/me" routerLinkActive="active"><img src="../../assets/images/my.jpg"style="width:25px;height:25px;border-radius: 50%;">{{loggedUserData.user.firstName|filter:true}} {{loggedUserData.user.lastName|filter:true}}</a>
+        <a class="btn btn-info my-2 my-sm-0 mr-3" *ngIf="isLoginSuccess" routerLink="/me" routerLinkActive="active"><img src="{{imageServerUrl}}{{loggedUserData.user.profileImage}}"style="width:25px;height:25px;border-radius: 50%;">{{loggedUserData.user.firstName|filter:true}} {{loggedUserData.user.lastName|filter:true}}</a>
       </li>
 
     </ul>

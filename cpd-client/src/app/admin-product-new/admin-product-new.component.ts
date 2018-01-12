@@ -9,6 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-product-new.component.css']
 })
 export class AdminProductNewComponent implements OnInit {
+  //product: any;
+  //productImage: any;
+  //uploadRes: Object;
+  //fileToUpload: File=null;
+
 
   ingrediants: any[] = [{ value: '' }];
   productType: string;
@@ -38,9 +43,48 @@ export class AdminProductNewComponent implements OnInit {
       }
       )
   }
-  
+
   newIngredient() {
     this.ingrediants.push({ value: '' });
   }
+  // handleFileInput(files: FileList) {
+  //   this.fileToUpload = files.item(0);
+  // }
+
+  // uploadFile() {
+  //   const formData: FormData = new FormData();
+
+  //   formData.append('image', this.fileToUpload, this.fileToUpload.name);
+
+  //   return this.http.post(
+  //     environment.apiURL + '/uploads',
+  //     formData
+  //   )
+  //     .subscribe(
+
+  //     res => {
+  //       console.log(res);
+        
+  //       this.uploadRes = res
+  //       this.product.productImage = this.uploadRes.productImage;
+  //       // update user profile url
+  //       this.http.put(
+  //         environment.apiURL + '/user',
+  //         this.loggedUserData.user
+  //       )
+  //         .subscribe(
+  //         res => {
+
+  //         }
+  //         )
+  //     },
+  //     err => {
+  //       console.log(err);
+
+  //     });
+  // }
+
+
+
 
 }

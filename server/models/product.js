@@ -22,6 +22,9 @@ var productSchema = mongoose.Schema({
         type:String,
         required:true
     },
+    productImage:{
+        type:String
+    },
     commentID:{
         type:String
     },

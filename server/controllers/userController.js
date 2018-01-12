@@ -94,7 +94,8 @@ module.exports.updateUser = function (obj, callback) {
         'contactNo': obj.contactNo,
         'addressNo': obj.addressNo,
         'NIC': obj.NIC,
-        'password': obj.password
+        'password': obj.password,
+        'profileImage': obj.profileImage
     };
     User.findOneAndUpdate(query, newData, { upsert: true }, callback);
 }

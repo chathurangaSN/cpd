@@ -1,83 +1,103 @@
 <h2>Add New Product</h2>
-<div class="container">
-  <form #productForm="ngForm" >
-
-    <div class="form-group">
-      <label class="col-md-4 control-label text-primary">Product Name</label>
-      <input type="text" id="productName" placeholder="Product Name" class="form-control" name="productName" ngModel required minlength="4"
-        #productName="ngModel">
-      <div *ngIf="productName.errors && (productName.dirty ||productName.toched || isRegFormSubmited)" class="alert alert-danger">
-        <div>
-          productName is required
-        </div>
-      </div>
+<div class="row">
+    <div class="col-sm-1">
     </div>
+  <div class="col-sm-8">
+    <form #productForm="ngForm">
 
-    <!-- <div class="form-group">
-      <label class="col-md-4 control-label text-primary">Quantity</label>
-      <input type="text" id="quantity" placeholder="Quantity" class="form-control" name="quantity"  ngModel>
-    </div> -->
-
-    <div class="form-group">
-      <label class="col-md-4 control-label text-primary">Unit Prize</label>
-      <input type="text" id="unitPrize" placeholder="Unit Prize" class="form-control" name="unitPrize" ngModel required pattern="[0-9]*"
-        minlength="1" #unitPrize="ngModel">
-      <div *ngIf=" unitPrize.errors && (unitPrize.dirty ||unitPrize.toched || isRegFormSubmited)" class="alert alert-danger">
-        <div [hidden]="!unitPrize.errors.required">
-          Unit Prize is required
-        </div>
-        <div [hidden]="!unitPrize.errors.pattern">
-          Don't enter letters
-        </div>
-        <div [hidden]="!unitPrize.errors.minlength">
-          Please enter valid number
-        </div>
-
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-md-4 control-label text-primary">Ingrediant</label>
-      <div *ngFor="let item of ingrediants; let i = index;">
-        <input type="text" id="ingrediant" [(ngModel)]="item.value" name="ingrediant" #ingrediant="ngModel" required placeholder="Ingrediant"
-          class="form-control" name="ingredient-{{i}}">
-        <div *ngIf="ingrediant.errors && (ingrediant.dirty ||ingrediant.toched || isRegFormSubmited)" class="alert alert-danger">
+      <div class="form-group">
+        <label class="col-md-4 control-label text-primary">Product Name</label>
+        <input type="text" id="productName" placeholder="Product Name" class="form-control" name="productName" ngModel required minlength="4"
+          #productName="ngModel">
+        <div *ngIf="productName.errors && (productName.dirty ||productName.toched || isRegFormSubmited)" class="alert alert-danger">
           <div>
-            ingrediant is required
+            productName is required
           </div>
         </div>
       </div>
 
 
-      <button (click)="newIngredient()">+</button>
+      <div class="form-group">
+        <label class="col-md-4 control-label text-primary">Unit Prize</label>
+        <input type="text" id="unitPrize" placeholder="Unit Prize" class="form-control" name="unitPrize" ngModel required pattern="[0-9]*"
+          minlength="1" #unitPrize="ngModel">
+        <div *ngIf=" unitPrize.errors && (unitPrize.dirty ||unitPrize.toched || isRegFormSubmited)" class="alert alert-danger">
+          <div [hidden]="!unitPrize.errors.required">
+            Unit Prize is required
+          </div>
+          <div [hidden]="!unitPrize.errors.pattern">
+            Don't enter letters
+          </div>
+          <div [hidden]="!unitPrize.errors.minlength">
+            Please enter valid number
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label text-primary">Ingrediant</label>
+        <div *ngFor="let item of ingrediants; let i = index;">
+          <input type="text" id="ingrediant" [(ngModel)]="item.value" name="ingrediant" #ingrediant="ngModel" required placeholder="Ingrediant"
+            class="form-control" name="ingredient-{{i}}">
+          <div *ngIf="ingrediant.errors && (ingrediant.dirty ||ingrediant.toched || isRegFormSubmited)" class="alert alert-danger">
+            <div>
+              ingrediant is required
+            </div>
+          </div>
+        </div>
+
+
+        <button (click)="newIngredient()">+</button>
+      </div>
+
+      <!-- <div class="form-group">
+                  <label class="col-md-4 control-label text-primary">Product Range</label>
+                  <input type="text" id="productType" placeholder="Product Type" class="form-control" name="productType"   ngModel>
+                </div> -->
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Product Range</label>
+        <select class="form-control" id="productType" name="productType" ngModel required>
+          <option value="SWEET">Sweet</option>
+          <option value="Puff">Puff</option>
+          <option value="Cream">Cream</option>
+          <option value="Cracker">Cracker</option>
+          <option value="Savoury">Savoury</option>
+          <option value="Gift">Gift</option>
+          <option value="Health">Health</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button type="submit" (click)="onSubmit(productForm.value)" class="btn btn-primary btn-block">Submit</button>
+
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-3">
+      <div class="card" style="width: 18rem;">
+
+          <div class="card-body">
+            <h5 class="card-title">this space is for image uploading...<br> (ON PROGRESS)</h5>
+            <p class="card-text"></p>
+            <a href="#" class="btn btn-primary btn-block">upload image</a>
+          </div>
+        </div>
+    <!-- <div class="img img-circle">
+
+      <img src="" class="productImage" alt="this is 200*200 image">
     </div>
 
-    <!-- <div class="form-group">
-      <label class="col-md-4 control-label text-primary">Product Range</label>
-      <input type="text" id="productType" placeholder="Product Type" class="form-control" name="productType"   ngModel>
-    </div> -->
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Product Range</label>
-      <select class="form-control" id="productType" name="productType" ngModel required>
-        <option value="SWEET">Sweet</option>
-        <option value="Puff">Puff</option>
-        <option value="Cream">Cream</option>
-        <option value="Cracker">Cracker</option>
-        <option value="Savoury">Savoury</option>
-        <option value="Gift">Gift</option>
-        <option value="Health">Health</option>
-      </select>
-    </div>
+    <form>
 
-    <!-- <div class="form-group">
-      <label class="col-md-4 control-label text-primary">Comment ID</label>
-      <input type="text" id="commentID" placeholder="Comment ID" class="form-control" name="commentID"  ngModel>
-    </div> -->
+      <div class="form-group">
+        <label for="file">Choose File</label>
+        <input type="file" id="file" (change)="handleFileInput($event.target.files)">
+        <input class="btn btn-block" type="submit" (click)="uploadFile()">
+
+      </div>
+    </form> -->
+
+  </div>
 
 
-    <div class="form-group">
-      <button type="submit" (click)="onSubmit(productForm.value)" class="btn btn-primary btn-block">Submit</button>
-
-    </div>
-  </form>
 </div>

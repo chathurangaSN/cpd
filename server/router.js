@@ -310,7 +310,8 @@ router.delete('/api/order', function (req, res) {
 
 /*upload photo */
 router.post('/api/uploads', upload.any(), function (req, res) {
-    res.send(req.files[0].filename);
+    res.send({'profileImage':req.files[0].filename});
+    res.send(res);
 });
 
 
