@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "async-waterfall": "^0.1.5",
-    "bcrypt": "^1.0.3",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.18.2",
     "common-errors": "^1.0.5",
     "cors": "^2.8.4",
